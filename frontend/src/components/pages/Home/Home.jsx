@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import {useForm} from 'react-hook-form';
+import axios from "axios";
 import imgIcon from "../../../assets/image.png"
 import encrypt from '../../../assets/encrypt.png'
 import hide from '../../../assets/hide.png'
@@ -32,14 +33,14 @@ const Home = () => {
   const submitHandler = async (data) => {
     const formData = new FormData();
 
-    formData.append('image', data.image[0]);
+    formData.append('image', img);
     formData.append('text', data.text);
-    formData.append('action', clickedButton.current);
+    formData.append('action', actionRef.current);
 
     const baseUrl = import.meta.env.TEST_API;
 
     try{
-      const response = await axios.post(`${baseUrl}/stegx`, formData, {
+      const response = await axios.post(`http://localhost:3000/stegx`, formData, {
         headers : {
           'Content-Type' : 'multipart/form-data'
         },
@@ -84,7 +85,7 @@ const Home = () => {
             <span className={`flex justify-center absolute rounded-full ${img ? "bg-[#0000003a] w-[8rem]" : "bg-[#ffffff31] w-[10rem]"} backdrop-blur-md left-[50%] bottom-[20px] -translate-x-[50%] py-2`}>{img ? "Selected" : "Select Image"}</span>
             <div onClick={handleUploadClick} className="img-overlay w-full h-full absolute top-0 left-0 cursor-pointer"></div>
 
-            <input onChange={(e) => handleFileChange(e)} ref={imgInputRef} {...register('image', { required: true })} accept="image/*" className='img-input hidden' type="file" />
+            <input onChange={(e) => handleFileChange(e)} ref={imgInputRef} accept="image/*" className='img-input hidden' type="file" />
 
           </div>
 

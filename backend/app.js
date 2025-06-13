@@ -57,7 +57,7 @@ app.post("/stegx", upload.single("image"), (req, res) => {
   const randomNumber = Math.floor(Math.random() * 2 ** 24); // Range: 0 to 16777215
   const ran = randomNumber.toString(2).padStart(24, "0"); // Ensure 24 bits
 
-  const asciiArr = message.split("").map((char) => char.charCodeAt(0));
+  const asciiArr = text.split("").map((char) => char.charCodeAt(0));
 
   const avg = Math.floor(
     asciiArr.reduce((sum, num) => sum + num, 0) / asciiArr.length
@@ -73,17 +73,17 @@ app.post("/stegx", upload.single("image"), (req, res) => {
     (DeciTwosCom - num).toString(2).padStart(24, "0")
   );
 
-  const key = keyGenerator(ran, avg, message.length);
+  const key = keyGenerator(ran, avg, text.length);
 
-
+  res.json({success : true, key});
 });
 
 app.get("/", (req, res) => {
-  const message = "Help me!";
+  const text = "Help me!";
   const randomNumber = Math.floor(Math.random() * 2 ** 24); // Range: 0 to 16777215
   const ran = randomNumber.toString(2).padStart(24, "0"); // Ensure 24 bits
 
-  const asciiArr = message.split("").map((char) => char.charCodeAt(0));
+  const asciiArr = text.split("").map((char) => char.charCodeAt(0));
 
   const avg = Math.floor(
     asciiArr.reduce((sum, num) => sum + num, 0) / asciiArr.length
@@ -99,7 +99,7 @@ app.get("/", (req, res) => {
     (DeciTwosCom - num).toString(2).padStart(24, "0")
   );
 
-  const key = keyGenerator(ran, avg, message.length);
+  const key = keyGenerator(ran, avg, text.length);
 
 
   res.json(key);
