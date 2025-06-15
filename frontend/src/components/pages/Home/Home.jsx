@@ -8,14 +8,20 @@ import retrieve from '../../../assets/retrieve.png'
 import selectedImg from '../../../assets/image2.png'
 import Process from './Process'
 const Home = () => {
-  const { register, handleSubmit, setValue, watch } = useForm();
+  const { register, handleSubmit, setValue} = useForm();
   const actionRef = useRef("");
   const imgInputRef = useRef(null);
+  const downloadRef = useRef(null);
   const [img, setImg] = useState(null);
   const [ data, setData ] = useState(null);
 
   const handleUploadClick = () => {
-    imgInputRef.current.click();
+    if(data){
+      downloadRef.current.click();
+    }
+    else{
+      imgInputRef.current.click();
+    }
   }
 
   const handleFileChange = (e) => {
@@ -83,14 +89,16 @@ const Home = () => {
         <form onSubmit={handleSubmit(submitHandler)} className='flex flex-col items-center'>
           <div className="img-upload-bg whiteglow-hover duration-500 transition-all w-[200px] h-[200px] border-2 border-[#dedede] border-dashed rounded-3xl mt-8 text-[#dedede] mb-10 flex justify-center items-center relative">
             <img src={img ? selectedImg : imgIcon} className='w-[90%] h-[90%] object-cover' alt="" />
-            <span className={`flex justify-center absolute rounded-full ${img ? "bg-[#0000003a] w-[8rem]" : "bg-[#ffffff31] w-[10rem]"} backdrop-blur-md left-[50%] bottom-[20px] -translate-x-[50%] py-2`}>{img ? "Selected" : "Select Image"}</span>
+            <span className={`flex justify-center absolute rounded-full ${img ? "bg-[#0000003a] w-[8rem]" : "bg-[#ffffff31] w-[10rem]"} backdrop-blur-md left-[50%] bottom-[20px] -translate-x-[50%] py-2`}>{data ? "Download" : img ? "Selected" : "Select Image"}</span>
+
             <div onClick={handleUploadClick} className="img-overlay w-full h-full absolute top-0 left-0 cursor-pointer"></div>
 
             <input onChange={(e) => handleFileChange(e)} ref={imgInputRef} accept="image/*" className='img-input hidden' type="file" />
+            <a ref={downloadRef} download={"Secret.png"} href={data && `data.image`}></a>
 
           </div>
 
-          <textarea {...register('text', { required: true })} className='w-full bg-[#0000002c] backdrop-blur-lg border-b-2 border-zinc-500 outline-none p-3 resize-none rounded-[5px_5px_0px_0px] text-[#dedede]' rows={5} placeholder='Write your message🤫 / key🔑 here!' autoFocus defaultValue={data && `${data.text}`}></textarea>
+          <textarea {...register('text', { required: true })} className='w-full bg-[#0000002c] backdrop-blur-lg border-b-2 border-zinc-500 outline-none p-3 resize-none rounded-[5px_5px_0px_0px] text-[#dedede]' rows={5} placeholder='Write your message🤫 / key🔑 here!' autoFocus value={data && `Key : ${data.text}`}></textarea>
 
           <div className="actions mt-5">
             <button onClick={() => (actionRef.current = 'decrypt')} type='submit' className='py-2.5 w-[10rem] rounded-lg bg-[#b3b3b3] shadow-2xl shadow-[#8a8a8a] font-medium text-black mr-3'>Retrieve Message</button>
