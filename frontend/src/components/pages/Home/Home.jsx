@@ -12,6 +12,7 @@ const Home = () => {
   const actionRef = useRef("");
   const imgInputRef = useRef(null);
   const [img, setImg] = useState(null);
+  const [ data, setData ] = useState(null);
 
   const handleUploadClick = () => {
     imgInputRef.current.click();
@@ -37,15 +38,15 @@ const Home = () => {
     formData.append('text', data.text);
     formData.append('action', actionRef.current);
 
-    const baseUrl = import.meta.env.TEST_API;
+    const baseUrl = import.meta.env.VITE_BACKEND_API;
 
     try{
-      const response = await axios.post(`http://localhost:3000/stegx`, formData, {
+      const response = await axios.post(`${baseUrl}/stegx`, formData, {
         headers : {
           'Content-Type' : 'multipart/form-data'
         },
       });
-      console.log("Response : ", response.data)
+      setData(response.data);
     }catch(err){
       console.error('Upload failed:', err);
     }
@@ -89,7 +90,7 @@ const Home = () => {
 
           </div>
 
-          <textarea {...register('text', { required: true })} className='w-full bg-[#0000002c] backdrop-blur-lg border-b-2 border-zinc-500 outline-none p-3 resize-none rounded-[5px_5px_0px_0px] text-[#dedede]' rows={5} placeholder='Write your message🤫 / key🔑 here!' autoFocus></textarea>
+          <textarea {...register('text', { required: true })} className='w-full bg-[#0000002c] backdrop-blur-lg border-b-2 border-zinc-500 outline-none p-3 resize-none rounded-[5px_5px_0px_0px] text-[#dedede]' rows={5} placeholder='Write your message🤫 / key🔑 here!' autoFocus defaultValue={data && `${data.text}`}></textarea>
 
           <div className="actions mt-5">
             <button onClick={() => (actionRef.current = 'decrypt')} type='submit' className='py-2.5 w-[10rem] rounded-lg bg-[#b3b3b3] shadow-2xl shadow-[#8a8a8a] font-medium text-black mr-3'>Retrieve Message</button>

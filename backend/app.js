@@ -1,13 +1,12 @@
 const express = require("express");
-// const multer = require("multer");
+const fs = require("fs");
 const Jimp = require("jimp");
-// const crypto = require("crypto");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
-const {upload, inpImgName} = require("./configs/multer-config");
+const { upload } = require("./configs/multer-config");
 
-app.use(cors({origin : "http://localhost:5173"}));
+app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.urlencoded({ extended: true }));
 dotenv.config();
 
@@ -45,12 +44,47 @@ const keyGenerator = (rnd, avg, len) => {
 
   for (let i = 1; i < keyParts.length; i++) {
     const seperator = String.fromCharCode(Math.floor(Math.random() * 20 + 71));
-    key = key + seperator + keyParts[i]
+    key = key + seperator + keyParts[i];
   }
   return key;
 };
 
-app.post("/stegx", upload.single("image"), (req, res) => {
+const embedMessageInImage = async (
+  inputImagePath,
+  outputImagePath,
+  binaryDataArray
+) => {
+  const image = await Jimp.read(inputImagePath);
+  let pixelIndex = 0;
+
+  for (let binary of binaryDataArray) {
+    for (let i = 0; i < 4; i++) {
+      const x = pixelIndex % image.bitmap.width;
+      const y = Math.floor(pixelIndex / image.bitmap.width);
+
+      if (y >= image.bitmap.height) {
+        throw new Error("Image too small to embed message.");
+      }
+
+      const idx = i * 6;
+      const color = Jimp.intToRGBA(image.getPixelColor(x, y));
+
+      const newR =
+        (color.r & 0b11111100) | parseInt(binary.slice(idx, idx + 2), 2);
+      const newG =
+        (color.g & 0b11111100) | parseInt(binary.slice(idx + 2, idx + 4), 2);
+      const newB =
+        (color.b & 0b11111100) | parseInt(binary.slice(idx + 4, idx + 6), 2);
+
+      image.setPixelColor(Jimp.rgbaToInt(newR, newG, newB, color.a), x, y);
+      pixelIndex++;
+    }
+  }
+
+  await image.writeAsync(outputImagePath);
+};
+
+app.post("/stegx", upload.single("image"), async (req, res) => {
   const image = req.file;
   const { text, action } = req.body;
 
@@ -73,12 +107,34 @@ app.post("/stegx", upload.single("image"), (req, res) => {
     (DeciTwosCom - num).toString(2).padStart(24, "0")
   );
 
+  const inpImgPath = `./uploads/${image.filename}`;
+  const outImgPath = `./images/${image.filename}`;
+
+
+  await embedMessageInImage(inpImgPath, outImgPath, subtracted);
+
   const key = keyGenerator(ran, avg, text.length);
 
-  res.json({success : true, key});
+  // Send the image as base64
+  fs.readFile(outImgPath, (err, data) => {
+    if (err) {
+      console.error("Error reading output image:", err);
+      return res
+        .status(500)
+        .json({ success: false, message: "Failed to read output image" });
+    }
+
+    const base64Image = data.toString("base64");
+
+    res.status(200).json({
+      success: true,
+      key,
+      image: `data:image/png;base64,${base64Image}`,
+    });
+  });
 });
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
   const text = "Help me!";
   const randomNumber = Math.floor(Math.random() * 2 ** 24); // Range: 0 to 16777215
   const ran = randomNumber.toString(2).padStart(24, "0"); // Ensure 24 bits
@@ -99,10 +155,30 @@ app.get("/", (req, res) => {
     (DeciTwosCom - num).toString(2).padStart(24, "0")
   );
 
+  const inpImgPath = `./uploads/${inpImgName}`;
+  const outImgPath = `./images/${inpImgName}`;
+
+  await embedMessageInImage(inpImgPath, outImgPath, subtracted);
+
   const key = keyGenerator(ran, avg, text.length);
 
+  // Send the image as base64
+  fs.readFile(outImgPath, (err, data) => {
+    if (err) {
+      console.error("Error reading output image:", err);
+      return res
+        .status(500)
+        .json({ success: false, message: "Failed to read output image" });
+    }
 
-  res.json(key);
+    const base64Image = data.toString("base64");
+
+    res.status(200).json({
+      success: true,
+      key,
+      image: `data:image/png;base64,${base64Image}`,
+    });
+  });
 });
 
 const port = process.env.PORT || 3000;
