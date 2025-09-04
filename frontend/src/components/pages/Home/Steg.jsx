@@ -52,7 +52,7 @@ const Steg = ({setLoad}) => {
         formData.append('text', data.text);
         formData.append('action', actionRef.current);
 
-        const baseUrl = import.meta.env.VITE_TEST_API;
+        const baseUrl = import.meta.env.VITE_BACKEND_API;
 
         try {
             const response = await axios.post(`${baseUrl}/stegx`, formData, {
