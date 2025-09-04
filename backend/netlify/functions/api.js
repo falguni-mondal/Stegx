@@ -1,15 +1,20 @@
-const express = require("express");
-const fs = require("fs");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const { upload } = require("./configs/multer-config");
-const embedMessageInImage = require("./functions/embeding/messageEmbeder");
-const encryption = require("./functions/embeding/encryption");
-const decryption = require("./functions/retrieving/decryption");
-const keyExtractor = require("./utils/keyExtractor");
-const extractBinaryFromImage = require("./functions/retrieving/binaryRetriever");
-const deleteAllFiles = require("./functions/deleteAllFiles");
+import express, {Router} from "express";
+import fs from "fs";
+import cors from "cors";
+import dotenv from "dotenv";
+import ServerlessHttp from "serverless-http";
+
+import { upload } from "../../configs/multer-config";
+import embedMessageInImage from "../../functions/embeding/messageEmbeder";
+import encryption from "../../functions/embeding/encryption";
+import decryption from "../../functions/retrieving/decryption";
+import keyExtractor from "../../utils/keyExtractor";
+import extractBinaryFromImage from "../../functions/retrieving/binaryRetriever";
+import deleteAllFiles from "../../functions/deleteAllFiles";
+
+
 const app = express();
+const router = Router();
 
 app.use(
   cors({
@@ -21,14 +26,14 @@ app.use(express.urlencoded({ extended: true }));
 dotenv.config();
 
 // Ensure 'uploads' and 'output' folders exist
-if (!fs.existsSync("./uploads")) fs.mkdirSync("./uploads");
-if (!fs.existsSync("./output")) fs.mkdirSync("./output");
+if (!fs.existsSync("../../uploads")) fs.mkdirSync("../../uploads");
+if (!fs.existsSync("../../output")) fs.mkdirSync("../../output");
 
-app.post("/stegx", upload.single("image"), async (req, res) => {
+router.post("/stegx", upload.single("image"), async (req, res) => {
   const image = req.file;
   const { text, action } = req.body;
-  const inpImgPath = `./uploads/${image.filename}`;
-  const outImgPath = `./output/${image.filename}`;
+  const inpImgPath = `../../uploads/${image.filename}`;
+  const outImgPath = `../../output/${image.filename}`;
 
   if (action === "encrypt") {
     const { binaryDataArr, key } = encryption(text);
@@ -52,8 +57,8 @@ app.post("/stegx", upload.single("image"), async (req, res) => {
       });
     });
 
-    deleteAllFiles("./uploads");
-    deleteAllFiles("./output");
+    deleteAllFiles("../../uploads");
+    deleteAllFiles("../../output");
   } else {
     try {
       const { ran, avg, len } = keyExtractor(text);
@@ -63,8 +68,8 @@ app.post("/stegx", upload.single("image"), async (req, res) => {
 
       const message = decryption(bitStream, ran, avg, len);
 
-      deleteAllFiles("./uploads");
-      deleteAllFiles("./output");
+      deleteAllFiles("../../uploads");
+      deleteAllFiles("../../output");
 
       res.status(200).json({ success: true, text: message });
     } catch (err) {
@@ -74,7 +79,6 @@ app.post("/stegx", upload.single("image"), async (req, res) => {
   }
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Running on http://localhost:${port}`);
-});
+
+app.use("/api/", router)
+export const handler = serverless(app);

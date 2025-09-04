@@ -1,38 +1,50 @@
-const Jimp = require("jimp");
+const sharp = require("sharp");
 
-const embedMessageInImage = async (
-  inputImagePath,
-  outputImagePath,
-  binaryDataArray
-) => {
-  const image = await Jimp.read(inputImagePath);
+const embedMessageInImage = async (inputImagePath, outputImagePath, binaryDataArray) => {
+  // Load image metadata
+  const image = sharp(inputImagePath);
+  const { width, height, channels } = await image.metadata();
+
+  // Extract raw pixel buffer (RGBA or RGB)
+  let buffer = await image.raw().toBuffer();
+
   let pixelIndex = 0;
 
   for (let binary of binaryDataArray) {
     for (let i = 0; i < 4; i++) {
-      const x = pixelIndex % image.bitmap.width;
-      const y = Math.floor(pixelIndex / image.bitmap.width);
+      const idx = pixelIndex * channels;
 
-      if (y >= image.bitmap.height) {
+      // Agar pixels image size se exceed kare to error
+      if (idx + 2 >= buffer.length) {
         throw new Error("Image too small to embed message.");
       }
 
-      const idx = i * 6;
-      const color = Jimp.intToRGBA(image.getPixelColor(x, y));
+      const bitIdx = i * 6;
 
-      const newR =
-        (color.r & 0b11111100) | parseInt(binary.slice(idx, idx + 2), 2);
-      const newG =
-        (color.g & 0b11111100) | parseInt(binary.slice(idx + 2, idx + 4), 2);
-      const newB =
-        (color.b & 0b11111100) | parseInt(binary.slice(idx + 4, idx + 6), 2);
+      // R channel
+      buffer[idx] = (buffer[idx] & 0b11111100) | parseInt(binary.slice(bitIdx, bitIdx + 2), 2);
 
-      image.setPixelColor(Jimp.rgbaToInt(newR, newG, newB, color.a), x, y);
+      // G channel
+      buffer[idx + 1] =
+        (buffer[idx + 1] & 0b11111100) | parseInt(binary.slice(bitIdx + 2, bitIdx + 4), 2);
+
+      // B channel
+      buffer[idx + 2] =
+        (buffer[idx + 2] & 0b11111100) | parseInt(binary.slice(bitIdx + 4, bitIdx + 6), 2);
+
+      // Alpha channel untouched (agar exist karta hai)
+      // buffer[idx + 3] = buffer[idx + 3];
+
       pixelIndex++;
     }
   }
 
-  await image.writeAsync(outputImagePath);
+  // Write modified buffer back to file
+  await sharp(buffer, {
+    raw: { width, height, channels },
+  })
+    .toFormat("png") // always output PNG (lossless)
+    .toFile(outputImagePath);
 };
 
 module.exports = embedMessageInImage;
