@@ -32,9 +32,6 @@ const outputDir = "/tmp/output";
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, {recursive: true});
 if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, {recursive: true});
 
-router.get("/", (req, res) => {
-    res.send("Hello Hero😎");
-})
 
 router.post("/stegx", upload.single("image"), async (req, res) => {
   const image = req.file;
@@ -87,5 +84,5 @@ router.post("/stegx", upload.single("image"), async (req, res) => {
 });
 
 
-app.use("/api/", router)
+app.use("/", router)
 export const handler = serverless(app);
