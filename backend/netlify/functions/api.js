@@ -25,9 +25,12 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 dotenv.config();
 
+const uploadDir = "/tmp/uploads";
+const outputDir = "/tmp/output";
+
 // Ensure 'uploads' and 'output' folders exist
-if (!fs.existsSync("../../uploads")) fs.mkdirSync("../../uploads");
-if (!fs.existsSync("../../output")) fs.mkdirSync("../../output");
+if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, {recursive: true});
+if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, {recursive: true});
 
 router.get("/", (req, res) => {
     res.send("Hello Hero😎");
@@ -36,8 +39,8 @@ router.get("/", (req, res) => {
 router.post("/stegx", upload.single("image"), async (req, res) => {
   const image = req.file;
   const { text, action } = req.body;
-  const inpImgPath = `../../uploads/${image.filename}`;
-  const outImgPath = `../../output/${image.filename}`;
+  const inpImgPath = `${uploadDir}/${image.filename}`;
+  const outImgPath = `${outputDir}/${image.filename}`;
 
   if (action === "encrypt") {
     const { binaryDataArr, key } = encryption(text);
@@ -61,8 +64,8 @@ router.post("/stegx", upload.single("image"), async (req, res) => {
       });
     });
 
-    deleteAllFiles("../../uploads");
-    deleteAllFiles("../../output");
+    deleteAllFiles(uploadDir);
+    deleteAllFiles(outputDir);
   } else {
     try {
       const { ran, avg, len } = keyExtractor(text);
@@ -72,8 +75,8 @@ router.post("/stegx", upload.single("image"), async (req, res) => {
 
       const message = decryption(bitStream, ran, avg, len);
 
-      deleteAllFiles("../../uploads");
-      deleteAllFiles("../../output");
+      deleteAllFiles(uploadDir);
+      deleteAllFiles(outputDir);
 
       res.status(200).json({ success: true, text: message });
     } catch (err) {
