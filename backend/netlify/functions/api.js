@@ -52,7 +52,7 @@ router.post("/stegx", upload.single("image"), async (req, res) => {
         console.error("Error reading output image:", err);
         return res
           .status(500)
-          .json({ success: false, message: "Failed to read output image" });
+          .json({ success: false, error: err });
       }
 
       const base64Image = data.toString("base64");
@@ -81,7 +81,7 @@ router.post("/stegx", upload.single("image"), async (req, res) => {
       res.status(200).json({ success: true, text: message });
     } catch (err) {
       console.error(err);
-      res.status(500).json({ success: false, error: err.message });
+      res.status(500).json({ success: false, error: err });
     }
   }
 });

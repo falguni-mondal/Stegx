@@ -67,6 +67,7 @@ const Steg = ({setLoad}) => {
         } catch (err) {
             alert('Upload Failed');
             setLoad(false);
+            console.log(err);
         }
     }
 
