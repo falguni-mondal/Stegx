@@ -2,7 +2,7 @@ import express, {Router} from "express";
 import fs from "fs";
 import cors from "cors";
 import dotenv from "dotenv";
-import ServerlessHttp from "serverless-http";
+import serverless from "serverless-http";
 
 import { upload } from "../../configs/multer-config";
 import embedMessageInImage from "../../functions/embeding/messageEmbeder";
@@ -28,6 +28,10 @@ dotenv.config();
 // Ensure 'uploads' and 'output' folders exist
 if (!fs.existsSync("../../uploads")) fs.mkdirSync("../../uploads");
 if (!fs.existsSync("../../output")) fs.mkdirSync("../../output");
+
+router.get("/", (req, res) => {
+    res.send("Hello Hero😎");
+})
 
 router.post("/stegx", upload.single("image"), async (req, res) => {
   const image = req.file;
