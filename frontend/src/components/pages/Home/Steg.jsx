@@ -55,7 +55,7 @@ const Steg = ({setLoad}) => {
         const baseUrl = import.meta.env.VITE_BACKEND_API;
 
         try {
-            const response = await axios.post(`${baseUrl}/stegx`, formData, {
+            const response = await axios.post(`${baseUrl}/api/stegx`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 },
