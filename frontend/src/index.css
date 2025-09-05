@@ -11,17 +11,12 @@
   src: url("/src/assets/fonts/NeueMachina-Regular.ttf");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 *::-webkit-scrollbar{
-  background: transparent;
+  background: #000;
   width: 0.7rem;
 }
 *::-webkit-scrollbar-thumb{
-  background: #aa71ff34;
+  background: #aa71ff8f;
   border-radius: 50px;
   cursor: pointer;
 }
@@ -55,9 +50,55 @@ header {
   box-shadow: rgba(255, 255, 255, 0.199) 0px 7px 29px 0px;
   transition: all 0.5s ease;
 }
-/* .gradient-heading {
-  background: linear-gradient(180deg, #af01ff, #2cbcff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
+.section-intro{
+  font-size: 1.3vw;
+  font-weight: 600;
+}
+.docs-main-heading{
+  letter-spacing: 1.5px;
+}
+.docs-heading{
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 3.2vw;
+  color: rgb(228, 228, 231);
+  line-height: 3.2vw;
+}
+.docs-subheading{
+  letter-spacing: 0.5px;
+  font-size: 1.5vw;
+  color: rgb(228, 228, 231);
+}
+.mini-heading{
+  font-size: 1.3vw;
+}
+.paragraph{
+  font-size: 1.15vw;
+}
+.highlight{
+  color: #9088ff;
+}
+
+@media (max-width: 1023px) {
+
+.docs-heading{
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 10vw;
+  color: rgb(228, 228, 231);
+  line-height: 10vw;
+  margin-bottom: 0.5rem;
+}
+.docs-subheading{
+  letter-spacing: 0.5px;
+  font-size: 5vw;
+  color: rgb(228, 228, 231);
+  line-height: 6vw;
+}
+.mini-heading{
+  font-size: 4.5vw;
+}
+.paragraph{
+  font-size: 3.6vw;
+}
+}

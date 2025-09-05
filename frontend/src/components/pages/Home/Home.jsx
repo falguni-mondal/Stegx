@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import encrypt from '../../../assets/encrypt.png'
 import hide from '../../../assets/hide.png'
 import retrieve from '../../../assets/retrieve.png'

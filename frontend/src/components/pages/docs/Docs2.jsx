@@ -6,9 +6,6 @@ import { IoMailOutline } from "react-icons/io5";
 
 const About = () => {
 
-    const breakTag = <br />;
-    const motive = <strong>Create a tool that is simple for users, yet extremely difficult to break, even for those who suspect that hidden data exists.</strong>;
-
     return (
         <section className='about-section text-[#bbaad6] p-3 lg:px-10 lg:pt-24 font-helv flex justify-center overflow-hidden'>
             <div className="content bg-[#a898e021] backdrop-blur-sm rounded-3xl p-5 lg:p-10 lg:max-w-[60vw] max-h-[90vh] lg:max-h-[80vh] overflow-y-scroll">
@@ -283,8 +280,8 @@ const About = () => {
                         <h2 className='mb-3 font-bold text-[1.4rem] tracking-wide'>Image Processing & File Handling</h2>
                         <ul className='list-disc pl-7 mb-8'>
                             <li>
-                                <h3 className='inline font-semibold tracking-wide'>Jimp</h3>
-                                <p className='inline'> – Used for manipulating images at the pixel level, allowing the embedding and extraction of hidden messages.</p>
+                                <h3 className='inline font-semibold tracking-wide'>Sharp</h3>
+                                <p className='inline'> – A library, used for manipulating images at the pixel level, allowing the embedding and extraction of hidden messages.</p>
                             </li>
                             <li>
                                 <h3 className='inline font-semibold tracking-wide'>Multer</h3>
@@ -304,10 +301,12 @@ const About = () => {
                             <li className="mb-5">
                                 <h3 className='mb-2 font-semibold tracking-wide'>Message Size</h3>
                                 <p>The amount of data that can be hidden is directly dependent on the number of pixels available in the image. Larger messages require higher-resolution images to store them effectively. Trying to embed a long message into a small image will result in failure or message truncation.</p>
+                                <br />
+                                <p>However, users don’t need to worry about this limitation unless the message is humongous. Our app Stegx is highly optimized and can fit <span className='text-white'>more than 1500 characters</span> into an image with just <span className='text-white'>100×100 resolution</span>, ensuring smooth performance for most practical use cases.</p>
                             </li>
                             <li className="mb-5">
                                 <h3 className='mb-2 font-semibold tracking-wide'>Image File</h3>
-                                <p>As of now, Stegx supports only .png image format. Other image formats or media types like audio, video, or PDFs are not supported for data embedding.</p>
+                                <p>As of now, Stegx supports <span className='text-white'>only .png image</span> format. Other image formats or media types like audio, video, or PDFs are not supported for data embedding.</p>
                             </li>
                             <li className="mb-5">
                                 <h3 className='mb-2 font-semibold tracking-wide'>File Compression</h3>
@@ -334,6 +333,21 @@ const About = () => {
                 <div className={`credits mb-14`}>
                     <h1 className='about-heading w-full text-[2.5rem] leading-none font-bold mb-3 capitalize'>Credits</h1>
                     <p className="about-paragraph text-[1.2rem] leading-[1.2] lg:text-justify">
+                        <h2 className='mb-3 font-bold text-[1.4rem] tracking-wide'>Project-Specific Credits</h2>
+                        <h3 className='font-semibold underline tracking-wide'>Core Algorithm Innovators</h3>
+                        <p>The encryption and embedding logic that powers Stegx is entirely custom-built. The core algorithm was developed from scratch by the following contributors:</p>
+                        <ul className='list-disc pl-7 mb-8 mt-5'>
+                            <li className="mb-2">Aditya Sharma (Uni Roll: 12500222121)</li>
+                            <li className="mb-2">Aman Kumar (Uni Roll: 12500222131)</li>
+                            <li className="mb-2">Shahbaj Husain (Uni Roll: 12500222135)</li>
+                            <li>Falguni Mondal ( <span className='text-zinc-200'>career.falguni@gmail.com</span> )</li>
+                        </ul>
+
+                        <h3 className='font-semibold underline tracking-wide'>Mentor / Guide</h3>
+                        <p className='mb-3'>This project was carried out under the guidance of :</p>
+                        <p className='mb-3'>Mr. Shiv Prasad</p>
+                        His mentorship played a critical role in shaping the structure of the project and pushing us to explore steganography beyond textbook definitions.
+                        <br /><br /><br />
 
                         <h2 className='mb-3 font-bold text-[1.4rem] tracking-wide'>Acknowledgements & Historical Steganography</h2>
                         <ul className='list-disc pl-7 mb-8'>
@@ -350,23 +364,6 @@ const About = () => {
                                 <p>Numerous adaptive LSB variations, edge-adaptive techniques, and multi-domain transformations have been explored in literature—for instance, embedding in edge/smooth areas, spatial vs. frequency domain methods, wavelet-based embedding, and hybrid encryption-LSB combinations</p>
                             </li>
                         </ul>
-
-                        <h2 className='mb-3 font-bold text-[1.4rem] tracking-wide'>Project-Specific Credits</h2>
-                        <h3 className='font-semibold underline tracking-wide'>Core Algorithm Innovators</h3>
-                        <p>The encryption and embedding logic that powers Stegx is entirely custom-built. The core algorithm was developed from scratch by the following contributors:</p>
-                        <ul className='list-disc pl-7 mb-8 mt-5'>
-                            <li className="mb-2">Aditya Sharma (Uni Roll: 12500222121)</li>
-                            <li className="mb-2">Aman Kumar (Uni Roll: 12500222131)</li>
-                            <li className="mb-2">Shahbaj Husain (Uni Roll: 12500222135)</li>
-                            <li>Falguni Mondal (Uni Roll: 12500222137)</li>
-                        </ul>
-
-                        <h3 className='font-semibold underline tracking-wide'>Mentor / Guide</h3>
-                        <p>This project was carried out under the guidance of :</p>
-                        <br />
-                        <p>Mr. Shiv Prasad</p>
-                        <br />
-                        His mentorship played a critical role in shaping the structure of the project and pushing us to explore steganography beyond textbook definitions.
                     </p>
                 </div>
 
@@ -394,22 +391,10 @@ const About = () => {
                     <h1 className='about-heading w-full text-[2.5rem] leading-none font-bold mb-3 capitalize'>explore more</h1>
                     <p className="about-paragraph text-[1.2rem] leading-[1.2] lg:text-justify">
                         Want to see how Stegx works under the hood or try it yourself?
-                        <h2 className='font-bold tracking-wide mt-3 mb-1'>👉 View the Source Code on GitHub :</h2>
+                        <h2 className='text-[1.05rem] mt-3 mb-1'>👉 View the Source Code on GitHub :</h2>
                         <a className="link flex items-center gap-1" href='https://github.com/falguni-mondal/Stegx' target='_blank'>
                             <IoIosLink />
-                            <span className='text-blue-700'>github.com/falguni-mondal/Stegx</span>
-                        </a>
-                        <h2
-                            className='font-bold tracking-wide mt-3 mb-1'>👉 Try Out the Live Web App :</h2>
-                        <Link className="link flex items-center gap-1" to='/'>
-                            <IoIosLink />
-                            <span className='text-blue-700'>stegx.netlify.app</span>
-                        </Link>
-                        <h2
-                            className='font-bold tracking-wide mt-3 mb-1'>👉 Connect with us :</h2>
-                        <a className="link flex items-center gap-1" href="mailto:connect.stegx@gmail.com?subject=Amazed by Stegx&body=From Stegx Webapp" target='_blank'>
-                            <IoMailOutline />
-                            <span className='text-blue-700'>connect.stegx@gmail.com</span>
+                            <span className='text-blue-700 text-[1.05rem]'>github.com/falguni-mondal/Stegx</span>
                         </a>
                         <br />
                         Feel free to explore, test, and contribute responsibly!
