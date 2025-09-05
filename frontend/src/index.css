@@ -27,7 +27,7 @@ body {
   height: 100%;
 }
 .main-container {
-  background-image: url("/src/assets/bg/abstract-bg-m1.jpg");
+  background-image: url("/src/assets/bg.webp");
   background-size: cover;
   background-repeat: no-repeat;
 }
