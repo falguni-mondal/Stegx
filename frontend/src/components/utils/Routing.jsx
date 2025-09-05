@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom'
-import Home from '../pages/home/Home'
-import Docs from '../pages/docs/Docs'
+import HomeTemp from '../pages/home/HomeTemp.jsx'
+import Docs from '../pages/docs/Docs.jsx'
 
 const Routing = () => {
   return (
     <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<HomeTemp />} />
         <Route path='/docs' element={<Docs />} />
     </Routes>
   )
