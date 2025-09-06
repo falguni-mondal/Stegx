@@ -17,15 +17,20 @@ import step8 from "../../../assets/steps/8.webp";
 
 
 const Docs = () => {
+    const [reveal, setReveal] = useState(false);
+
+    const navRevealer = () => {
+        setReveal(prev => !prev);
+    }
 
     return (
-        <section className='w-full h-[100vh] font-helv tracking-wide flex bg-[#00000091] overflow-y-scroll' id='docs-section'>
-            <section className='w-[20%] min-h-[100vh] hidden lg:block sticky top-0' id="docs-navbar">
+        <section className='w-full h-[100dvh] font-helv tracking-wide flex flex-col lg:flex-row bg-[#00000091] overflow-x-hidden overflow-y-scroll' id='docs-section'>
+            <header className='w-[20%] min-h-[100vh] hidden lg:block sticky top-0' id="docs-navbar">
                 <div className="section-intro p-10 text-zinc-200 flex gap-1 items-center">
                     <HiSquares2X2 />
                     <span className='docs-main-heading'>Documentation</span>
                 </div>
-                <div className="menu-wrapper text-zinc-300 border-r border-[#504e75fb]">
+                <nav className="menu-wrapper text-zinc-300 border-r border-[#504e75fb]">
                     <ul className="menu-container">
                         <li className={`menu-item-container flex gap-2 items-center pl-6 py-1.5`}>
                             <IoIosArrowForward className='text-[0.6rem]' />
@@ -33,7 +38,7 @@ const Docs = () => {
                         </li>
                         <li className={`menu-item-container flex gap-2 items-center pl-6 py-1.5`}>
                             <IoIosArrowForward className='text-[0.6rem]' />
-                            <a href="#using" className={`hover:text-[#938bff] paragraph`}>How to use</a>
+                            <a href="#using" className={`hover:text-[#938bff] paragraph`}>How to Use</a>
                         </li>
                         <li className={`menu-item-container flex gap-2 items-center pl-6 py-1.5`}>
                             <IoIosArrowForward className='text-[0.6rem]' />
@@ -41,7 +46,7 @@ const Docs = () => {
                         </li>
                         <li className={`menu-item-container flex gap-2 items-center pl-6 py-1.5`}>
                             <IoIosArrowForward className='text-[0.6rem]' />
-                            <a href="#uniqueness" className={`hover:text-[#938bff] paragraph`}>What is unique</a>
+                            <a href="#uniqueness" className={`hover:text-[#938bff] paragraph`}>What is Unique</a>
                         </li>
                         <li className={`menu-item-container flex gap-2 items-center pl-6 py-1.5`}>
                             <IoIosArrowForward className='text-[0.6rem]' />
@@ -57,7 +62,7 @@ const Docs = () => {
                         </li>
                         <li className={`menu-item-container flex gap-2 items-center pl-6 py-1.5`}>
                             <IoIosArrowForward className='text-[0.6rem]' />
-                            <a href="#real-world-usage" className={`hover:text-[#938bff}`}>Real worls usecase</a>
+                            <a href="#real-world-usage" className={`hover:text-[#938bff} paragraph`}>Real World Usecase</a>
                         </li>
                         <li className={`menu-item-container flex gap-2 items-center pl-6 py-1.5`}>
                             <IoIosArrowForward className='text-[0.6rem]' />
@@ -81,11 +86,70 @@ const Docs = () => {
                         </li>
                         <li className={`menu-item-container flex gap-2 items-center pl-6 py-1.5`}>
                             <IoIosArrowForward className='text-[0.6rem]' />
-                            <a href="#explore" className={`hover:text-[#938bff] paragraph`}>Explore more</a>
+                            <a href="#explore" className={`hover:text-[#938bff] paragraph`}>Explore More</a>
                         </li>
                     </ul>
+                </nav>
+            </header>
+
+            <header className='lg:hidden sticky top-0 backdrop-blur-lg bg-[#00000027] text-zinc-200 px-3 flex justify-between items-center z-[10]' id="docs-mobile-navbar">
+                <div className="section-title flex items-center gap-1 py-[1.5vh]">
+                    <HiSquares2X2 />
+                    <span className='docs-main-heading'>Documentation</span>
                 </div>
-            </section>
+                <div onClick={navRevealer} className='header-content flex flex-col justify-center items-center gap-1.5 py-[1.5vh] relative z-[100]' id="mobile-nav-hamburger">
+                    <span className={`h-[0.15vh] w-[9vw] bg-zinc-200 ${reveal ? "rotate-[45deg] translate-y-1" : ""} transition-all duration-700 ease-in-out`}></span>
+                    <span className={`h-[0.15vh] w-[9vw] bg-zinc-200 ${reveal ? "rotate-[-45deg] -translate-y-1" : ""} transition-all duration-700 ease-in-out`}></span>
+                </div>
+                <div className={`header-content fixed top-0 left-0 h-[100vh] w-[100.2vw] bg-[#000000f8] ${reveal ? "" : "translate-x-[100%]"} transition-all duration-700 ease-in-out`} id="mobile-doc-nav-menu">
+                    <nav className="menu-wrapper text-zinc-300 border-r border-[#504e75fb]">
+                        <ul className="menu-container pl-10 pt-20">
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#overview" className={`hover:text-[#938bff] mobile-docs-nav-link`}>Overview</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#using" className={`hover:text-[#938bff] mobile-docs-nav-link`}>How to Use</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#inspiration" className={`hover:text-[#938bff] mobile-docs-nav-link`}>Inspiration</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#uniqueness" className={`hover:text-[#938bff] mobile-docs-nav-link`}>What is Unique</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#sys-overview" className={`hover:text-[#938bff] mobile-docs-nav-link`}>System Overview</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#security" className={`hover:text-[#938bff] mobile-docs-nav-link`}>Security</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#privacy" className={`hover:text-[#938bff] mobile-docs-nav-link`}>User Privacy</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#real-world-usage" className={`hover:text-[#938bff} mobile-docs-nav-link`}>Real World Usecase</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#challenges" className={`hover:text-[#938bff] mobile-docs-nav-link`}>Challenges</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#tech" className={`hover:text-[#938bff] mobile-docs-nav-link`}>Technologies</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#careful" className={`hover:text-[#938bff] mobile-docs-nav-link`}>Be Careful</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#credits" className={`hover:text-[#938bff] mobile-docs-nav-link`}>Developers</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#disclaimer" className={`hover:text-[#938bff] mobile-docs-nav-link`}>Disclaimer</a>
+                            </li>
+                            <li className={`menu-item-container flex gap-2 items-center py-1`}>
+                                <a onClick={navRevealer} href="#explore" className={`hover:text-[#938bff] mobile-docs-nav-link`}>Explore More</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
 
             <section className='lg:w-[80%] px-3 lg:px-20 pt-5 lg:pt-[15vh] text-[#cecece]' id="docs-dets">
 
@@ -109,7 +173,7 @@ const Docs = () => {
 
                     <div>
                         <h3 className='mini-heading font-semibold flex gap-1 items-center'>
-                            <HiSquares2X2 className='rotate-45 text-[1.5rem]' />
+                            <HiSquares2X2 className='rotate-45 text-[1.5rem] relative z-[1]' />
                             <span>Hiding a Message (Embedding)</span>
                         </h3>
                         <p className='paragraph'>This process allows you to embed a secret message into an image.</p>

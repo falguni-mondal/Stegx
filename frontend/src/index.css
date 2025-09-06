@@ -11,16 +11,6 @@
   src: url("/src/assets/fonts/NeueMachina-Regular.ttf");
 }
 
-*::-webkit-scrollbar{
-  background: #000;
-  width: 0.7rem;
-}
-*::-webkit-scrollbar-thumb{
-  background: #aa71ff8f;
-  border-radius: 50px;
-  cursor: pointer;
-}
-
 html,
 body {
   width: 100%;
@@ -39,66 +29,93 @@ header {
 }
 .heading-txt {
   font-family: "Italiana", sans-serif;
+  font-size: 6vw;
+  line-height: 6vw;
+  letter-spacing: -0.3vw;
+  width: 100%;
+}
+.heading-paragraph{
+  font-size: 1.35vw;
+  line-height: 1.9vw;
+  letter-spacing: -0.05vw;
+  margin-top: 3vh;
+}
+.docs-btn{
+  font-size: 1.1vw;
+  margin-top: 4.5vh;
 }
 .neue-txt {
   font-family: "NeueMachina_regular";
 }
-.font-helv{
+.font-helv {
   font-family: "Helvetica_regular";
 }
 .whiteglow-hover:hover {
   box-shadow: rgba(255, 255, 255, 0.199) 0px 7px 29px 0px;
   transition: all 0.5s ease;
 }
-.section-intro{
+.section-intro {
   font-size: 1.3vw;
   font-weight: 600;
 }
-.docs-main-heading{
+.docs-main-heading {
   letter-spacing: 1.5px;
 }
-.docs-heading{
-  font-weight: 600;
-  letter-spacing: 2px;
-  font-size: 3.2vw;
-  color: rgb(228, 228, 231);
-  line-height: 3.2vw;
-}
-.docs-subheading{
-  letter-spacing: 0.5px;
-  font-size: 1.5vw;
-  color: rgb(228, 228, 231);
-}
-.mini-heading{
+
+.mini-heading {
   font-size: 1.3vw;
 }
-.paragraph{
+.paragraph {
   font-size: 1.15vw;
 }
-.highlight{
+.highlight {
   color: #9088ff;
 }
 
 @media (max-width: 1023px) {
+  .heading-txt {
+    font-size: 21vw;
+    line-height: 21vw;
+    letter-spacing: -1vw;
+  }
+  .heading-paragraph{
+  font-size: 4.8vw;
+  line-height: 6.15vw;
+  margin-top: 2.8vh;
+}
+.docs-btn{
+  font-size: 4.2vw;
+  margin-top: 3.5vh;
+}
 
-.docs-heading{
-  font-weight: 600;
-  letter-spacing: 2px;
-  font-size: 10vw;
-  color: rgb(228, 228, 231);
-  line-height: 10vw;
-  margin-bottom: 0.5rem;
-}
-.docs-subheading{
-  letter-spacing: 0.5px;
-  font-size: 5vw;
-  color: rgb(228, 228, 231);
-  line-height: 6vw;
-}
-.mini-heading{
-  font-size: 4.5vw;
-}
-.paragraph{
-  font-size: 3.6vw;
-}
+  .section-intro {
+    font-size: 4.5vw;
+    font-weight: 600;
+  }
+  .docs-heading {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 10vw;
+    color: rgb(228, 228, 231);
+    line-height: 10vw;
+    margin-bottom: 0.5rem;
+  }
+  .docs-subheading {
+    letter-spacing: 0.5px;
+    font-size: 5vw;
+    color: rgb(228, 228, 231);
+    line-height: 6vw;
+  }
+  .mini-heading {
+    font-size: 4.5vw;
+  }
+  .paragraph {
+    font-size: 3.6vw;
+  }
+  .mobile-docs-nav-link {
+    font-size: 6vw;
+  }
+  .mobile-nav-link {
+    font-size: 9vw;
+  }
 }
