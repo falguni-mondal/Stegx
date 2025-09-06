@@ -21,6 +21,17 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.neue-txt {
+  font-family: "NeueMachina_regular";
+}
+.font-helv {
+  font-family: "Helvetica_regular";
+}
+.whiteglow-hover:hover {
+  box-shadow: rgba(255, 255, 255, 0.199) 0px 7px 29px 0px;
+  transition: all 0.5s ease;
+}
+
 header {
   pointer-events: none;
 }
@@ -40,20 +51,11 @@ header {
   letter-spacing: -0.05vw;
   margin-top: 3vh;
 }
-.docs-btn{
+.learn-more-btn{
   font-size: 1.1vw;
   margin-top: 4.5vh;
 }
-.neue-txt {
-  font-family: "NeueMachina_regular";
-}
-.font-helv {
-  font-family: "Helvetica_regular";
-}
-.whiteglow-hover:hover {
-  box-shadow: rgba(255, 255, 255, 0.199) 0px 7px 29px 0px;
-  transition: all 0.5s ease;
-}
+
 .section-intro {
   font-size: 1.3vw;
   font-weight: 600;
@@ -61,7 +63,18 @@ header {
 .docs-main-heading {
   letter-spacing: 1.5px;
 }
-
+.docs-heading {
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 3.2vw;
+  color: rgb(228, 228, 231);
+  line-height: 3.2vw;
+}
+.docs-subheading {
+  letter-spacing: 0.5px;
+  font-size: 1.5vw;
+  color: rgb(228, 228, 231);
+}
 .mini-heading {
   font-size: 1.3vw;
 }
