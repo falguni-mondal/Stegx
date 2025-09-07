@@ -71,7 +71,7 @@ const Docs = () => {
                         </li>
                         <li className={`menu-item-container flex gap-2 items-center pl-6 py-1.5`}>
                             <IoIosArrowForward className='text-[0.6rem]' />
-                            <a href="#real-world-usage" className={`hover:text-[#938bff} paragraph`}>Real World Usecase</a>
+                            <a href="#real-world-usage" className={`hover:text-[#938bff] paragraph`}>Real World Usecase</a>
                         </li>
                         <li className={`menu-item-container flex gap-2 items-center pl-6 py-1.5`}>
                             <IoIosArrowForward className='text-[0.6rem]' />
