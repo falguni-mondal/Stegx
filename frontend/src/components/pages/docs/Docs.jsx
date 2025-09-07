@@ -4,6 +4,15 @@ import { IoIosArrowForward } from "react-icons/io";
 import { IoIosWarning } from "react-icons/io";
 import { IoIosLink } from "react-icons/io";
 
+import { FaReact } from "react-icons/fa";
+import { TbBrandVite } from "react-icons/tb";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { MdAltRoute } from "react-icons/md";
+import { FaNodeJs } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
+import { FaFileImage } from "react-icons/fa6";
+import { RiImageCircleAiFill } from "react-icons/ri";
+
 
 
 import step1 from "../../../assets/steps/1.webp";
@@ -30,7 +39,7 @@ const Docs = () => {
                     <HiSquares2X2 />
                     <span className='docs-main-heading'>Documentation</span>
                 </div>
-                <nav className="menu-wrapper text-zinc-300 border-r border-[#504e75fb]">
+                <nav className="menu-wrapper header-content text-zinc-300 border-r border-[#504e75fb]">
                     <ul className="menu-container">
                         <li className={`menu-item-container flex gap-2 items-center pl-6 py-1.5`}>
                             <IoIosArrowForward className='text-[0.6rem]' />
@@ -160,7 +169,7 @@ const Docs = () => {
                         Stegx is a powerful and intuitive web application designed to perform <span className='highlight'>encryption-based image steganography</span>. It allows users to securely <span className="highlight">hide secret messages inside images</span> using a highly secure, custom-developed algorithm that manipulates pixel-level data without noticeably altering the visual appearance of the image.
                     </p>
                     <p className="paragraph mt-4">
-                        Built with a strong focus on security, usability, and innovation, Stegx provides an end-to-end encryption-decryption workflow where the message is converted into a secure binary form and embedded deep within the image data. This process is done entirely on the web, making it accessible and easy to use while maintaining a high standard of cryptographic protection.
+                        Built with a strong focus on <span className="highlight">security, usability, and innovation</span>, Stegx provides an end-to-end encryption-decryption workflow where the message is converted into a secure binary form and embedded deep within the image data. This process is done entirely on the web, making it accessible and easy to use while maintaining a high standard of cryptographic protection.
                     </p>
                 </div>
 
@@ -168,7 +177,7 @@ const Docs = () => {
                     <h2 className='docs-heading'>How to use Stegx?</h2>
                     <p className='docs-subheading'>A quick guide to hide and retrieve your messages.</p>
                     <p className="paragraph mt-8 pb-8 mb-8 border-b border-[#504e75fb]">
-                        To use Stegx, you have two primary functions: hiding a message within an image (Embedding) and retrieving a message from a processed image. Follow these steps carefully to ensure your data remains secure and accessible.
+                        To use Stegx, you have two primary functions, hiding a message within an image (Embedding) and retrieving a message from a processed image. <span className="highlight">Follow these steps carefully</span> to ensure your data remains secure and accessible.
                     </p>
 
                     <div>
@@ -180,7 +189,7 @@ const Docs = () => {
                         <ul className='mt-10'>
                             <li>
                                 <p className='paragraph mb-2'>
-                                    <span className='font-semibold '>1. Select an Image :</span> Click on the image icon to choose a PNG file from your system. The icon will change to display your selected image.
+                                    <span className='font-semibold '>1. Select an Image :</span> Click on the image icon to choose a <span className="highlight">PNG file</span> from your system. The icon will change to display your selected image.
                                 </p>
                                 <img src={step1} alt="" />
                             </li>
@@ -192,7 +201,7 @@ const Docs = () => {
                             </li>
                             <li className='mt-14'>
                                 <p className='paragraph mb-2'>
-                                    <span className='font-semibold '>3. Start the Process :</span> Click the "Hide Message" button. The app will process the image and message. After 3-5 seconds (depending on your network), the process will be complete.
+                                    <span className='font-semibold '>3. Start the Process :</span> Click the <span className="highlight">"Hide Message" button</span>. The app will process the image and message. After 3-5 seconds (depending on your network), the process will be complete.
                                 </p>
                                 <img src={step3} alt="" />
                             </li>
@@ -201,10 +210,10 @@ const Docs = () => {
                                     <span className='font-semibold '>4. Download Data :</span> The app will give you two critical pieces of information:
                                 </p>
                                 <p className='paragraph pl-5 mb-1'>
-                                    <span className=''>•</span> <span className='underline'>Processed Image</span> : The image box will now contain the processed image with your hidden message. Click it to download this file.
+                                    <span className=''>•</span> <span className='underline'>Processed Image</span> : <span className="highlight">The image box</span> will now contain the processed image with your hidden message. <span className="highlight">Click it to download</span> this file.
                                 </p>
                                 <p className='paragraph pl-5 mb-3'>
-                                    <span className=''>•</span> <span className='underline'>Unique Key</span> : The text area will now show a unique key. Copy this key and save it securely. You will need both the processed image and this key to retrieve your message later.
+                                    <span className=''>•</span> <span className='underline'>Unique Key</span> : The text area will now show a unique key. <span className="highlight">Copy this unique key</span> and save it securely. You will need both the processed image and this key to retrieve your message later.
                                 </p>
                                 <img src={step4} alt="" />
                             </li>
@@ -216,10 +225,10 @@ const Docs = () => {
                             <span className='font-semibold'>• Do Not Lose Your Data</span> : If either the processed image or the unique key is lost or altered, your message will be permanently unrecoverable.
                         </p>
                         <p className='paragraph pl-3 mt-3 mb-3'>
-                            <span className='font-semibold'>• Avoid Image Compression</span> : Sending the processed image through platforms like WhatsApp, Facebook, or Instagram often compresses te image, which will destroy the hidden message.
+                            <span className='font-semibold'>• Avoid Image Compression</span> : <span className="highlight">Sending</span> the processed image through platforms like <span className="highlight">WhatsApp, Facebook, or Instagram</span> often compresses te image, which will <span className="highlight">destroy</span> the hidden <span className="highlight">message</span>.
                         </p>
                         <p className='paragraph pl-3'>
-                            <span className='font-semibold'>• Recommended Sharing Methods</span> : To safely share the image, send it as a document file on platforms like WhatsApp or upload it to a cloud service like Google Drive and share the link.
+                            <span className='font-semibold'>• Recommended Sharing Methods</span> : <span className="highlight">To safely share</span> the image, send it as a <span className="highlight">document file</span> on platforms like WhatsApp or <span className="highlight">upload it</span> to a cloud service like <span className="highlight">Google Drive</span> and share the link.
                         </p>
                     </div>
 
@@ -238,13 +247,13 @@ const Docs = () => {
                             </li>
                             <li className='mt-14'>
                                 <p className='paragraph mb-2'>
-                                    <span className='font-semibold '>2. Paste the Unique Key :</span> Paste your unique key into the text area. Make sure to paste only the key value itself, excluding the "key:" prefix and any extra spaces.
+                                    <span className='font-semibold '>2. Paste the Unique Key :</span> Paste your unique key into the text area. Make sure to paste only the key value itself, <span className="highlight">excluding the "key:"</span> prefix and any <span className="highlight">extra spaces</span>.
                                 </p>
                                 <img src={step6} alt="" />
                             </li>
                             <li className='mt-14'>
                                 <p className='paragraph mb-2'>
-                                    <span className='font-semibold '>3. Click on Retrieve Message :</span> Click the "Retrieve Message" button. The app will process the image and key, and after a few seconds, your hidden message will appear in the text area.
+                                    <span className='font-semibold '>3. Click on Retrieve Message :</span> Click the <span className="highlight">"Retrieve Message"</span> button. The app will process the image and key, and after a few seconds, your hidden message will appear in the text area.
                                 </p>
                                 <img src={step7} alt="" />
                             </li>
@@ -262,19 +271,19 @@ const Docs = () => {
                     <h2 className='docs-heading'>Inspiration</h2>
                     <p className='docs-subheading'>From a Simple Question to a Powerful Tool, The Story Behind Our Technology.</p>
                     <p className="paragraph mt-8">
-                        The idea for Stegx was born from a deep curiosity about how digital information can be hidden in plain sight, combined with a passion for solving real-world problems through code. In a world where privacy is increasingly at risk and communication is constantly monitored, there’s a growing need for methods that allow people to share sensitive information discreetly—without raising suspicion or compromising security.
+                        The idea for Stegx was born from a deep curiosity about how digital information can be hidden in plain sight, combined with a passion for solving real-world problems through code. In a world where privacy is increasingly at risk and communication is constantly monitored, there’s a growing need for methods that allow people to share sensitive information discreetly without raising suspicion or compromising security.
                     </p>
                     <p className="paragraph mt-4">
-                        Traditional encryption is powerful, but its output often looks suspicious: garbled text, unreadable formats, or strange files. Steganography, on the other hand, offers a clever alternative—hiding the existence of the message altogether. This subtlety fascinated us.
+                        Traditional encryption is powerful, but its output often looks suspicious: garbled text, unreadable formats, or strange files. Steganography, on the other hand, offers a clever alternative hiding the existence of the message altogether. This subtlety fascinated us.
                     </p>
                     <p className="paragraph mt-4">
                         What started as a simple experiment with basic steganographic techniques evolved into something much more ambitious. We wanted to go beyond the usual Least Significant Bit (LSB) methods and build something that would not only conceal data but also protect it with a custom, layered encryption process that could stand up to real analysis.
                     </p>
                     <p className="paragraph mt-4">
-                        The goal was clear : Create a tool that is simple for users, yet extremely difficult to break, even for those who suspect that hidden data exists.
+                        The goal was clear : Create <span className="highlight">a tool</span> that is <span className="highlight">simple for users</span>, yet <span className="highlight">extremely difficult to break</span>, even for those who suspect that hidden data exists.
                     </p>
                     <p className="paragraph mt-4">
-                        Stegx was developed to bring this vision to life—a modern, secure, and user-friendly steganography tool that proves how creative thinking, math, and code can be combined to build meaningful security solutions.
+                        Stegx was developed to bring this vision to life a modern, secure, and user-friendly steganography tool that proves how creative thinking, math, and code can be combined to build meaningful security solutions.
                     </p>
                     <p className="paragraph mt-4">
                         It’s more than just a project. It’s a statement :<br />
@@ -288,13 +297,13 @@ const Docs = () => {
                     <div className='mt-8 pl-5'>
                         <h3 className='mini-heading font-semibold'>🔐 Custom Encryption Before Embedding</h3>
                         <p className="paragraph mt-3">
-                            Unlike standard tools that directly hide plain text in image pixels, Stegx encrypts the message using a multi-step custom algorithm before embedding it. This makes the hidden data useless and unreadable unless decrypted with the exact key.
+                            Unlike standard tools that directly hide plain text in image pixels, Stegx encrypts the message using a <span className="highlight">multi-step custom algorithm</span> before embedding it. This makes the hidden data useless and unreadable unless decrypted with the exact key.
                         </p>
                     </div>
                     <div className='mt-8 pl-5'>
                         <h3 className='mini-heading font-semibold'>🧠 Intelligent Key Generation</h3>
                         <p className="paragraph mt-3">
-                            Each operation in Stegx produces a unique decryption key that encodes essential details required to reverse the process—without revealing anything meaningful on its own. The key structure is intentionally obfuscated, making reverse-engineering impractical.
+                            Each operation in Stegx produces a unique decryption key that encodes essential details required to reverse the process without revealing anything meaningful on its own. The key structure is intentionally obfuscated, making reverse-engineering impractical. The interesting part is - using the <span className="highlight">same image</span> and <span className="highlight">same message</span> multiple times can generate <span className="highlight">different keys</span>, and that makes it even more secure and powerfull.
                         </p>
                     </div>
                     <div className='mt-8 pl-5'>
@@ -306,13 +315,13 @@ const Docs = () => {
                     <div className='mt-8 pl-5'>
                         <h3 className='mini-heading font-semibold'>🚫 Difficult to Brute-Force</h3>
                         <p className="paragraph mt-3">
-                            With a breaking complexity greater than 429,49,67,29,83,66 (4.2 bilion), Stegx is not vulnerable to common brute-force or dictionary attacks. Without the exact encryption parameters and key, decryption is computationally infeasible—even for attackers who suspect something is hidden.
+                            With a breaking <span className="highlight">complexity</span> greater than 429,49,67,29,83,66 <span className="highlight">(4.2 bilion)</span>, Stegx is not vulnerable to common brute-force or dictionary attacks. Without the exact encryption parameters and key, decryption is computationally infeasible—even for attackers who suspect something is hidden.
                         </p>
                     </div>
                     <div className='mt-8 pl-5'>
                         <h3 className='mini-heading font-semibold'>🌐 100% Web-Based, No Installation</h3>
                         <p className="paragraph mt-3">
-                            Stegx runs entirely in the browser. No software installation, no data stored on servers—everything happens client-side, giving users complete control and privacy.
+                            Stegx runs entirely in the browser. No software installation, <span className="highlight">no data stored</span> on databse, everything happens in server which deletes the image data after sending back to the user, giving users complete control and privacy.
                         </p>
                     </div>
 
@@ -326,12 +335,12 @@ const Docs = () => {
                         Stegx is built around a secure and carefully layered architecture that transforms textual information into an encrypted binary format and embeds it within an image using pixel-level manipulation. The entire process is designed to be lightweight, browser-accessible, and highly secure, ensuring ease of use without compromising the integrity of the hidden message.
                     </p>
                     <p className='paragraph mt-4'>
-                        At its core, Stegx follows a three-phase flow: Input Handling → Encryption & Embedding → Output & Key Generation.
+                        At its core, Stegx follows a three-phase flow: <span className="highlight">Input Handling → Encryption & Embedding → Output & Key Generation</span>.
                         <br />Each phase plays a critical role in maintaining the confidentiality, accuracy, and reversibility of the steganographic process.
                     </p>
-
+                    <div className='h-[1px] bg-[#403f63] mt-8'></div>
                     <div>
-                        <h2 className='mb-2 mt-10 mini-heading font-semibold tracking-wide'>1. Input Handling</h2>
+                        <h2 className='mb-2 mt-8 mini-heading font-semibold tracking-wide'>1. Input Handling</h2>
                         The system begins by accepting two user inputs:
 
                         <ul className='list-disc pl-10'>
@@ -341,7 +350,7 @@ const Docs = () => {
                         <br />
                         <p className='paragraph'>Before proceeding, the system checks for:</p>
                         <ul className='list-disc pl-10'>
-                            <li className='paragraph'>Validity of the image file (PNG in this case.)</li>
+                            <li className='paragraph'>Validity of the image file (<span className="highlight">PNG</span> in this case.)</li>
                             <li className='paragraph'>Length and size compatibility between the message and image capacity</li>
                             <li className='paragraph'>Cleaned and normalized input to ensure proper encryption</li>
                         </ul>
@@ -353,14 +362,14 @@ const Docs = () => {
                         <ul className='list-disc pl-10'>
                             <li className='paragraph'>The message is converted into a numeric form, pre-processed using mathematical operations, and encrypted using a dynamically generated random value.</li>
                             <li className='paragraph'>The result is a binary payload that represents the encrypted version of the message.</li>
-                            <li className='paragraph'>This binary data is embedded into the RGB channels of selected image pixels using a precise bit-level modification technique, specifically targeting the least significant bits to ensure the image’s appearance remains unchanged to the human eye.</li>
+                            <li className='paragraph'>This binary data is <span className="highlight">embedded into the RGB channels</span> of selected image pixels using a precise bit-level modification technique, specifically targeting the least significant bits to ensure the image’s appearance remains unchanged to the human eye.</li>
                         </ul>
                         <br />
                         <p className='paragraph'>The embedding is designed to be:</p>
                         <ul className='list-disc pl-10'>
                             <li className='paragraph'>Randomized to avoid patterns</li>
                             <li className='paragraph'>Irreversible without complete knowledge of the encryption key</li>
-                            <li className='paragraph'>Undetectable using common steganalysis methods</li>
+                            <li className='paragraph'><span className="highlight">Undetectable</span> using <span className="highlight">common steganalysis methods</span></li>
                         </ul>
                     </div>
                     <div className='mt-10'>
@@ -372,14 +381,7 @@ const Docs = () => {
                             <li className='paragraph'>Alongside, a unique decryption key is generated which contains critical parameters required to reverse the process</li>
                         </ul>
                         <br />
-                        <p className="paragraph">The key includes:</p>
-                        <ul className='list-disc pl-10'>
-                            <li className='paragraph'>A hexadecimal-encoded version of the random masking value used in encryption</li>
-                            <li className='paragraph'>Metadata like message length and encryption factors</li>
-                            <li className='paragraph'>All key parts are separated using non-hex characters to obscure their structure and prevent unauthorized extraction</li>
-                        </ul>
-                        <br />
-                        <p className="paragraph">This key must be securely stored by the user, as it is the only way to decrypt the message hidden in the image.</p>
+                        <p className="paragraph">This <span className="highlight">key</span> must be securely stored by the user, as it is the <span className="highlight">only way to decrypt</span> the message hidden in the image.</p>
                     </div>
                     <div className='mt-10'>
                         <h2 className='mb-2 mini-heading font-semibold tracking-wide'>4. Decryption (Reverse Flow)</h2>
@@ -392,7 +394,7 @@ const Docs = () => {
                             <li className='paragraph'>Finally, retrieves the original message with full accuracy</li>
                         </ul>
                         <br />
-                        <p className="paragraph">If any part of the key is incorrect, the system will fail to produce a valid output—ensuring that even small deviations result in complete message loss, reinforcing data confidentiality.</p>
+                        <p className="paragraph">If any part of the <span className="highlight">key is incorrect</span>, the system will <span className="highlight">fail to produce</span> a valid <span className="highlight">output</span> ensuring that even small deviations result in complete message loss, reinforcing data confidentiality.</p>
                     </div>
                 </div>
 
@@ -401,14 +403,16 @@ const Docs = () => {
                     <p className='docs-subheading mb-8'>Security measures that protect your messages</p>
 
                     <p className='paragraph'>
-                        At the heart of Stegx lies a commitment to robust, intelligent, and tamper-resistant security. Unlike basic steganography tools that simply insert data into the least significant bits of an image, Stegx takes it a step further—encrypting the message through multiple transformations before embedding it into the image. This layered approach ensures that even if someone identifies that an image is suspicious, they cannot extract or interpret the hidden message without the correct decryption key.
+                        At the heart of Stegx lies a commitment to robust, intelligent, and tamper-resistant security. Unlike basic steganography tools that simply insert data into the least significant bits of an image, Stegx takes it a step further <span className="highlight">encrypting the message</span> through multiple transformations <span className="highlight">before embedding</span> it into the image. This layered approach ensures that even if someone identifies that an image is suspicious, they cannot extract or interpret the hidden message without the correct decryption key.
                     </p>
 
-                    <h3 className='mini-heading pl-5 mt-10 mb-2 font-semibold'>Key security highlights</h3>
+                    <div className='h-[1px] bg-[#403f63] mt-8'></div>
+
+                    <h3 className='mini-heading pl-5 mt-8 mb-2 font-semibold'>Key security highlights</h3>
                     <ul className='list-disc pl-5'>
                         <li className='paragraph mb-4 mt-4'>
                             <h4 className='mb-1'>Custom unique algorithm :</h4>
-                            <p>Before embedding any message, Stegx encrypts it using a multi-step algorithm that introduces randomness, mathematical transformations, and non-linear logic. This ensures the data is unreadable in its embedded form and protected against known steganalysis methods.</p>
+                            <p>Before embedding any message, Stegx encrypts it using a <span className="highlight">custom unique multi-step algorithm</span> that introduces randomness, mathematical transformations, and non-linear logic. This ensures the data is unreadable in its embedded form and protected against known steganalysis methods.</p>
                         </li>
                         <li className='paragraph mb-4'>
                             <h4 className='mb-1'>Decryption Key Dependency :</h4>
@@ -416,19 +420,15 @@ const Docs = () => {
                         </li>
                         <li className='paragraph mb-4'>
                             <h4 className='mb-1'>High Brute-Force Complexity :</h4>
-                            <p>With a breaking complexity exceeding 429,49,67,29,83,66 (4.2 bilion), the system is resistant to brute-force attacks. The key space is large and randomized, making exhaustive search methods computationally infeasible.</p>
-                        </li>
-                        <li className='paragraph mb-4'>
-                            <h4 className='mb-1'>Obfuscation of Parameters :</h4>
-                            <p>All essential encryption parameters are mixed with non-hex characters in the key, making it unreadable without the internal logic of Stegx. This prevents attackers from extracting usable hints from the key format alone.</p>
+                            <p>With a <span className="highlight">breaking complexity</span> exceeding 429,49,67,29,83,66 <span className="highlight">(4.2 bilion)</span>, the system is resistant to <span className="highlight">brute force attacks</span>. The key space is large and randomized, making exhaustive search methods computationally infeasible.</p>
                         </li>
                         <li className='paragraph mb-4'>
                             <h4 className='mb-1'>Stealth by Design :</h4>
-                            <p>The message is embedded in a way that doesn’t alter the visible quality of the image, making the existence of hidden data nearly undetectable to the naked eye and resistant to histogram and pixel-based detection.</p>
+                            <p>The message is embedded in a way that <span className="highlight">doesn’t alter</span> the visible <span className="highlight">quality of the image</span>, making the existence of hidden data nearly <span className="highlight">undetectable</span> to the <span className="highlight">naked eye</span> and resistant to <span className="highlight">histogram and pixel-based detection</span>.</p>
                         </li>
                         <li className='paragraph mb-4'>
                             <h4 className='mb-1'>One-Time Key System :</h4>
-                            <p>Each encryption session uses a fresh random binary mask, ensuring that even the same message embedded in the same image will produce a different encrypted output and key every time. This enhances unpredictability and security.</p>
+                            <p>Each encryption session uses a fresh random binary mask, ensuring that even the <span className="highlight">same message</span> embedded in the <span className="highlight">same image</span> will produce a <span className="hightight">different</span> encrypted <span className="highlight">output and key</span> every time. This enhances unpredictability and security.</p>
                         </li>
                     </ul>
                 </div>
@@ -441,7 +441,9 @@ const Docs = () => {
                         At Stegx, user privacy is treated with utmost importance. While the platform uses a backend server to perform the encryption and embedding operations, none of the user-provided data is ever stored or retained after processing.
                     </p>
 
-                    <h3 className='mini-heading mb-2 mt-10 pl-5 font-semibold'>The Handling :</h3>
+                    <div className='h-[1px] bg-[#403f63] mt-8'></div>
+
+                    <h3 className='mini-heading mb-2 mt-8 pl-5 font-semibold'>The Handling :</h3>
                     <ul className='list-disc pl-5'>
                         <li className='paragraph mb-4 mt-4'>
                             <h4 className='mb-1'>Temporary Server Processing</h4>
@@ -449,7 +451,7 @@ const Docs = () => {
                         </li>
                         <li className='paragraph mb-4'>
                             <h3 className='mb-1'>No Permanent Storage</h3>
-                            <p>Stegx does not store your message, image, or generated key in any database or persistent storage. Once the response is sent to your browser, all associated data is deleted from the server immediately.</p>
+                            <p>Stegx <span className="highlight">does not store</span> your <span className="highlight">message</span>, <span className="highlight">image</span>, or generated <span className="highlight">key</span> in any database or persistent storage. Once the response is sent to your browser, all associated data is <span className="highlight">deleted</span> from the server immediately.</p>
                         </li>
                         <li className='paragraph mb-4'>
                             <h3 className='mb-1'>No User Account Required</h3>
@@ -477,7 +479,9 @@ const Docs = () => {
                         Unlike typical encryption tools that simply scramble text, Stegx embeds the encrypted message directly into the pixels of an image. This not only conceals the content but also the very fact that a message exists. The result is a highly secure and subtle form of communication that blends seamlessly into modern digital workflows.
                     </p>
 
-                    <h3 className='mini-heading mb-2 mt-10 pl-5 font-semibold'>But How?</h3>
+                    <div className='h-[1px] bg-[#403f63] mt-8'></div>
+
+                    <h3 className='mini-heading mb-2 mt-8 pl-5 font-semibold'>But How?</h3>
                     <ul className='list-disc pl-5'>
                         <li className='paragraph mb-4 mt-4'>
                             <h4 className='mb-1'>Private Conversations in Public Channels</h4>
@@ -538,39 +542,41 @@ const Docs = () => {
                         The development of Stegx involved a modern and efficient tech stack, combining powerful frontend and backend tools to ensure smooth performance, real-time processing, and secure handling of image data.
                     </p>
 
-                    <h3 className='mini-heading mb-2 mt-10 pl-5 font-semibold'>Frontend</h3>
-                    <ul className='list-disc pl-5'>
-                        <li className='paragraph mb-2 mt-4'>
-                            React.js – Used to build a dynamic and responsive user interface with a component-based architecture.
+                    <div className='h-[1px] bg-[#403f63] mt-8'></div>
+
+                    <h3 className='mini-heading mb-2 mt-8 pl-5 font-semibold'>Frontend</h3>
+                    <ul className='pl-5'>
+                        <li className='paragraph mb-2 mt-4 flex items-center gap-1'>
+                            <FaReact className='text-[#63b9ff]'/>React.js – Used to build a dynamic and responsive user interface with a component-based architecture.
                         </li>
-                        <li className='paragraph mb-2'>
-                            Vite – Provided a lightning-fast development environment and optimized build system for React.
+                        <li className='paragraph mb-2 flex items-center gap-1'>
+                            <TbBrandVite className='text-amber-400'/>Vite – Provided a lightning-fast development environment and optimized build system for React.
                         </li>
-                        <li className='paragraph mb-2'>
-                            Tailwind CSS – Enabled rapid UI styling with a utility-first approach, ensuring a clean and responsive design across devices.
+                        <li className='paragraph mb-2 flex items-center gap-1'>
+                            <RiTailwindCssFill className='text-[#63b9ff]'/>Tailwind CSS – Enabled rapid UI styling with a utility-first approach, ensuring a clean and responsive design across devices.
                         </li>
-                        <li className='paragraph'>
-                            React-router-dom - To handle client-side routing in React applications, allowing for the creation of Single Page Applications (SPAs)
+                        <li className='paragraph flex items-center gap-1'>
+                            <MdAltRoute className='text-red-400'/>React-router-dom - To handle client-side routing in React applications, allowing for the creation of Single Page Applications (SPAs)
                         </li>
                     </ul>
 
-                    <h3 className='mini-heading mb-2 mt-10 pl-5 font-semibold'>Backend</h3>
-                    <ul className='list-disc pl-5'>
-                        <li className='paragraph mb-2 mt-4'>
-                            Node.js – Served as the runtime environment for handling server-side logic and asynchronous operations.
+                    <h3 className='mini-heading mb-2 mt-8 pl-5 font-semibold'>Backend</h3>
+                    <ul className='pl-5'>
+                        <li className='paragraph mb-2 mt-4 flex items-center gap-1'>
+                            <FaNodeJs className='text-lime-300'/>Node.js – Served as the runtime environment for handling server-side logic and asynchronous operations.
                         </li>
-                        <li className='paragraph'>
-                            Express.js – A minimalist web framework used to create the backend API endpoints for encryption and image handling.
+                        <li className='paragraph flex items-center gap-1'>
+                            <SiExpress className='text-teal-400'/>Express.js – A minimalist web framework used to create the backend API endpoints for encryption and image handling.
                         </li>
                     </ul>
 
-                    <h3 className='mini-heading mb-2 mt-10 pl-5 font-semibold'>Image Processing & File Handling (Backend)</h3>
-                    <ul className='list-disc pl-5'>
-                        <li className='paragraph mb-2 mt-4'>
-                            Sharp – A fast library, used for manipulating images at the pixel level, allowing the embedding and extraction of hidden messages.
+                    <h3 className='mini-heading mb-2 mt-8 pl-5 font-semibold'>Image Processing & File Handling (Backend)</h3>
+                    <ul className='pl-5'>
+                        <li className='paragraph mb-2 mt-4 flex items-center gap-1'>
+                            <RiImageCircleAiFill className='text-blue-400'/>Sharp – A fast library, used for manipulating images at the pixel level, allowing the embedding and extraction of hidden messages.
                         </li>
-                        <li className='paragraph'>
-                            Multer – Middleware used for handling image file uploads from the client side to the server securely and efficiently.
+                        <li className='paragraph flex items-center gap-1'>
+                            <FaFileImage className='text-indigo-500'/>Multer – Middleware used for handling image file uploads from the client side to the server securely and efficiently.
                         </li>
                     </ul>
                 </div>
@@ -583,26 +589,28 @@ const Docs = () => {
                         While Stegx is designed to offer a high level of security and ease of use, like any software system, it comes with a few limitations that are important to acknowledge. These limitations do not affect its core functionality but may influence how and where it is best applied.
                     </p>
 
+                    <div className='h-[1px] bg-[#403f63] my-8'></div>
+
                     <ul className='list-disc pl-5 mb-5'>
                         <li className='mb-4 mt-4'>
                             <h3 className='mini-heading mb-1 font-semibold'>Message Size</h3>
-                            <p className='paragraph mb-3'>The amount of data that can be hidden is directly dependent on the number of pixels available in the image. Larger messages require higher-resolution images to store them effectively. Trying to embed a long message into a small image will result in failure or message truncation.</p>
+                            <p className='paragraph mb-3'>The <span className="highlight">amount of data</span> that can be hidden is directly <span className="highlight">dependent</span> on the <span className="highlight">number of pixels</span> available in the image. Larger messages require higher-resolution images to store them effectively. Trying to embed a long message into a small image will result in failure or message truncation.</p>
 
-                            <p className='paragraph'>However, users don’t need to worry about this limitation unless the message is humongous. Our app Stegx is highly optimized and can fit more than 1500 characters into an image with just 100×100 resolution, ensuring smooth performance for most practical use cases.</p>
+                            <p className='paragraph'>However, users don’t need to worry about this limitation unless the message is humongous. Our app Stegx is highly optimized and <span className="highlight">can fit</span> more than <span className="highlight">1500 characters</span> into an image with just <span className="highlight">100×100 resolution</span>, ensuring smooth performance for most practical use cases.</p>
                         </li>
                         <li className='mb-4'>
                             <h3 className='mini-heading mb-1 font-semibold'>File Compression</h3>
-                            <p className='paragraph mb-3'>Images processed by Stegx should not be compressed or re-encoded (for example, by uploading to certain social media platforms), as lossy compression can destroy the embedded data. This makes Stegx unsuitable for scenarios where image integrity cannot be preserved after embedding.</p>
+                            <p className='paragraph mb-3'>Images processed by Stegx should not be compressed or re-encoded (for example, by uploading to certain social media platforms), as <span className="highlight">lossy compression can destroy the embedded data</span>. This makes Stegx unsuitable for scenarios where image integrity cannot be preserved after embedding.</p>
 
-                            <p className='paragraph'>However you can share the image by sending it as a document in the platforms like Whatsapp, or using cloud platforms like Google Drive.</p>
+                            <p className='paragraph'>However you can share the image by sending it as a <span className="highlight">document</span> in the platforms like <span className="highlight">Whatsapp</span>, or using cloud platforms like <span className="highlight">Google Drive</span>.</p>
                         </li>
                         <li className='mb-4'>
                             <h3 className='mini-heading mb-1 font-semibold'>Image File</h3>
-                            <p className='paragraph'>As of now, Stegx supports only .png image format. Other image formats or media types like audio, video, or PDFs are not supported for data embedding.</p>
+                            <p className='paragraph'>As of now, Stegx <span className="highlight">supports</span> only <span className="highlight">.png</span> image format. Other image formats or media types like audio, video, or PDFs are not supported for data embedding.</p>
                         </li>
                         <li className='mb-4'>
                             <h3 className='mini-heading mb-1 font-semibold'>Decryption Key</h3>
-                            <p className='paragraph'>The decryption process depends on a precise combination of values provided in the key. If any part of the key is incorrect or missing, the message cannot be recovered, and the result will be meaningless.</p>
+                            <p className='paragraph'>The decryption process depends on the key. If any part of the key is incorrect or missing, the message cannot be recovered, and the result will be meaningless.</p>
                         </li>
                         <li className='mb-4'>
                             <h3 className='mini-heading mb-1 font-semibold'>Recovery</h3>
@@ -622,7 +630,7 @@ const Docs = () => {
 
                     <div className="developers">
                         <h3 className='mini-heading font-semibold tracking-wide'>Core Algorithm Innovators / Developers</h3>
-                        <p className='paragraph'>The encryption and embedding logic that powers Stegx is entirely custom-built. The core algorithm was developed from scratch by the following contributors:</p>
+                        <p className='paragraph'>The <span className="highlight">encryption and embedding</span> logic that powers Stegx is <span className="highlight">entirely custom-built</span>. The core algorithm was developed from scratch by the following contributors:</p>
                         <ul className='list-disc pl-7 mb-8 mt-5'>
                             <li className="paragraph mb-2">Aditya Sharma ( <a href='mailto:adi19082001@gmail.com?subject=Amazed by Stegx&body=From Stegx Webapp' className='text-blue-700'>adi19082001@gmail.com</a> )</li>
                             <li className="paragraph mb-2">Aman Kumar ( <a href='mailto:kaman514297@gmail.com?subject=Amazed by Stegx&body=From Stegx Webapp' className='text-blue-700'>kaman514297@gmail.com</a> )</li>
@@ -657,11 +665,13 @@ const Docs = () => {
 
                 <div className="scroll-mt-24 mb-20" id="disclaimer">
                     <h2 className='docs-heading'>Disclaimer</h2>
-                    <p className='docs-subheading mb-8'>Please read carefully before using Stegx</p>
+                    <p className='docs-subheading mb-8'>Please <span className="highlight">read carefully</span> before using Stegx</p>
 
                     <p className='paragraph mb-5'>
                         Stegx is developed purely for educational, research, and ethical use. It is intended to demonstrate how digital steganography can be used to protect information in creative and secure ways. The platform showcases a custom-built algorithm designed to raise awareness about data privacy, encryption, and secure communication.
                     </p>
+
+                    <div className='h-[1px] bg-[#403f63] my-8'></div>
 
                     <p className='paragraph'>
                         The developer(s) of Stegx do not promote or support the use of this tool for any illegal, malicious, or unauthorized activities, including but not limited to:

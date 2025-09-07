@@ -77,9 +77,11 @@ header {
 }
 .mini-heading {
   font-size: 1.3vw;
+  letter-spacing: 1.5px;
 }
 .paragraph {
   font-size: 1.15vw;
+  letter-spacing: 0.5px;
 }
 .highlight {
   color: #9088ff;
@@ -96,7 +98,7 @@ header {
   line-height: 6.15vw;
   margin-top: 2.8vh;
 }
-.docs-btn{
+.learn-more-btn{
   font-size: 4.2vw;
   margin-top: 3.5vh;
 }

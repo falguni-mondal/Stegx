@@ -4,7 +4,7 @@ const Navbar = ({navReveal, navRevealer}) => {
 
     return (
         <>
-            <header className='w-full hidden lg:flex justify-center fixed top-0 left-0 pt-6 z-[100]' id='main-navbar'>
+            <header className='w-full hidden lg:flex justify-center fixed top-0 left-0 pt-3 z-[100]' id='main-navbar'>
                 <div className="header-content flex justify-between w-1/2 px-10 py-2 bg-[#c4c4c438] backdrop-blur-md rounded-full">
                     <div className="logo">
                         <svg xmlns="http://www.w3.org/2000/svg" width="80" viewBox="0 0 509 150" fill="none">
