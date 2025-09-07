@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const MobileNavMenu = ({navReveal, navRevealer}) => {
+
     return (
         <div className={`fixed lg:hidden top-0 left-0 h-[100vh] w-[100.2vw] bg-[#000] ${navReveal ? "" : "translate-x-[100%]"} transition-all duration-700 ease-in-out z-[998]`} id="mobile-nav-menu">
             <nav className="menu-wrapper text-zinc-300 border-r border-[#504e75fb]">

@@ -101,7 +101,7 @@ const Docs = () => {
                 </nav>
             </header>
 
-            <header className='lg:hidden sticky top-0 backdrop-blur-lg bg-black text-zinc-200 px-3 flex justify-between items-center z-[10]' id="docs-mobile-navbar">
+            <header className='lg:hidden sticky top-0 bg-black text-zinc-200 px-3 flex justify-between items-center z-[10]' id="docs-mobile-navbar">
                 <div className="section-title flex items-center gap-1 py-[1.5vh]">
                     <HiSquares2X2 className='text-[4.2vw]' />
                     <span className='docs-main-heading text-[4.2vw]'>Documentation</span>
@@ -110,7 +110,7 @@ const Docs = () => {
                     <span className={`h-[0.15vh] w-[8vw] bg-zinc-200 ${reveal ? "rotate-[45deg] translate-y-1" : ""} transition-all duration-700 ease-in-out`}></span>
                     <span className={`h-[0.15vh] w-[8vw] bg-zinc-200 ${reveal ? "rotate-[-45deg] -translate-y-1" : ""} transition-all duration-700 ease-in-out`}></span>
                 </div>
-                <div className={`header-content fixed top-0 left-0 h-[100vh] w-[100.2vw] bg-[rgba(0,0,0,0.98)] ${reveal ? "" : "translate-x-[100%]"} transition-all duration-700 ease-in-out`} id="mobile-doc-nav-menu">
+                <div className={`header-content fixed top-0 h-[100vh] w-[100.2vw] bg-[rgba(0,0,0,0.98)] ${reveal ? "left-0" : "left-[100%]"} transition-all duration-700 ease-in-out`} id="mobile-doc-nav-menu">
                     <nav className="menu-wrapper text-zinc-300 border-r border-[#504e75fb]">
                         <ul className="menu-container pl-10 pt-20">
                             <li className={`menu-item-container flex gap-2 items-center py-1`}>

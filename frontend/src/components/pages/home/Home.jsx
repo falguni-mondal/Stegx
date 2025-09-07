@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <section className='homepage relative w-full pb-20 lg:pb-0 pt-10 lg:pt-24 px-3 lg:px-10 grid grid-cols-1 grid-rows-3 lg:grid-cols-6 lg:grid-rows-1 gap-16'>
-      <div className={`loader fixed z-50 h-screen w-screen flex flex-col items-center justify-center pb-28 lg:pb-10 bg-[#ffffff28] top-0 left-0 text-white ${load ? "" : "hidden"}`}>
+      <div className={`loader fixed z-50 inset-0 flex flex-col items-center justify-center pb-28 lg:pb-10 bg-[#0000008a] text-white ${load ? "" : "hidden"}`}>
         <img className='w-[80px] h-[80px]' src={loading} alt="" />
         <p className='bg-[#0000001a] font-medium'>Wait for a moment 😊</p>
       </div>

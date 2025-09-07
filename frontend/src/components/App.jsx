@@ -9,9 +9,9 @@ const App = () => {
     setNavReveal(prev => !prev);
   }
   return (
-    <div className='main-container w-full relative'>
+    <div className='main-container w-full relative overflow-x-hidden'>
       <Navbar navReveal={navReveal} navRevealer={navRevealer} />
-      <MobileNavMenu navReveal={navReveal} />
+      <MobileNavMenu navReveal={navReveal} navRevealer={navRevealer}/>
       <main className='w-full min-h-[100dvh] backdrop-blur-[100px] lg:bg-[#00000028]'>
         <Routing />
       </main>
