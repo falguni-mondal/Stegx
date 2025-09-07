@@ -44,7 +44,7 @@ const Home = () => {
       <Steg setLoad={setLoad} />
 
       {/* RIGHT SECTION */}
-      <div className="overview-container lg:col-span-2 flex flex-col gap-10 mt-10">
+      <div className="overview-container lg:col-span-2 flex flex-col gap-10 mt-10 lg:mt-[7vmin]">
         {
           process.map(({ heading, desc, img }) => (
             <Process key={heading} heading={heading} desc={desc} img={img} />

@@ -109,7 +109,7 @@ const Steg = ({ setLoad }) => {
 
             <div className="test-img-container relative flex flex-col items-center gap-[4vw] lg:gap-[0.7vw] mb-[4vw] lg:mb-[0.7vw] text-zinc-200 text-[4vw] lg:text-[1.15vw]">
                 <div className="text-image-ele relative">
-                    <span ref={testBtnRef} onClick={() => setShowMenu(prev => !prev)} className='flex items-center gap-2 text-[4.5vw] lg:text-[1.3vw] py-[2vw] lg:py-[0.3vw] px-[9vw] lg:px-[3vw] pr-[7vw] lg:pr-[2vw] border-2 border-zinc-300 border-dashed rounded-full cursor-pointer'>Test Image <IoIosArrowDown /></span>
+                    <span ref={testBtnRef} onClick={() => setShowMenu(prev => !prev)} className='flex items-center gap-2 text-[4.5vw] lg:text-[1.3vw] py-[2vw] lg:py-[0.3vw] px-[9vw] lg:px-[3vw] pr-[7vw] lg:pr-[2vw] border-2 border-zinc-300 border-dashed rounded-full cursor-pointer whiteglow-hover'>Test Image <IoIosArrowDown /></span>
 
                     <div className={`test-img-menu ${showMenu ? "h-fit border-[0.6vw] lg:border-[0.25vw]" : "h-0 border-0"} absolute z-[99] top-[115%] left-0 rounded-lg w-full bg-[#0a091ffa] overflow-hidden border-[#1d1b42fa]`}>
                         <ul className='text-[4vw] lg:text-[1.1vw]'>

@@ -27,6 +27,9 @@ body {
 .font-helv {
   font-family: "Helvetica_regular";
 }
+.whiteglow-hover{
+  transition: all 0.5s ease;
+}
 .whiteglow-hover:hover {
   box-shadow: rgba(255, 255, 255, 0.199) 0px 7px 29px 0px;
   transition: all 0.5s ease;
