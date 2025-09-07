@@ -27,7 +27,7 @@ body {
 .font-helv {
   font-family: "Helvetica_regular";
 }
-.whiteglow-hover{
+.whiteglow-hover {
   transition: all 0.5s ease;
 }
 .whiteglow-hover:hover {
@@ -48,13 +48,13 @@ header {
   letter-spacing: -0.3vw;
   width: 100%;
 }
-.heading-paragraph{
+.heading-paragraph {
   font-size: 1.35vw;
   line-height: 1.9vw;
   letter-spacing: -0.05vw;
   margin-top: 3vh;
 }
-.learn-more-btn{
+.learn-more-btn {
   font-size: 1.1vw;
   margin-top: 4.5vh;
 }
@@ -96,15 +96,15 @@ header {
     line-height: 21vw;
     letter-spacing: -1vw;
   }
-  .heading-paragraph{
-  font-size: 4.8vw;
-  line-height: 6.15vw;
-  margin-top: 2.8vh;
-}
-.learn-more-btn{
-  font-size: 4.2vw;
-  margin-top: 3.5vh;
-}
+  .heading-paragraph {
+    font-size: 4.8vw;
+    line-height: 6.15vw;
+    margin-top: 2.8vh;
+  }
+  .learn-more-btn {
+    font-size: 4.2vw;
+    margin-top: 3.5vh;
+  }
 
   .section-intro {
     font-size: 4.5vw;

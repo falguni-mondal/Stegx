@@ -33,7 +33,7 @@ const Docs = () => {
     }
 
     return (
-        <section className='w-full h-[100dvh] font-helv tracking-wide flex flex-col lg:flex-row bg-[#00000091] overflow-x-hidden overflow-y-scroll' id='docs-section'>
+        <section className='w-full h-[100dvh] font-helv tracking-wide flex flex-col lg:flex-row overflow-x-hidden overflow-y-scroll' id='docs-section'>
             <header className='w-[20%] min-h-[100vh] hidden lg:block sticky top-0' id="docs-navbar">
                 <div className="section-intro p-10 text-zinc-200 flex gap-1 items-center">
                     <HiSquares2X2 />
@@ -101,16 +101,16 @@ const Docs = () => {
                 </nav>
             </header>
 
-            <header className='lg:hidden sticky top-0 backdrop-blur-lg bg-[#00000027] text-zinc-200 px-3 flex justify-between items-center z-[10]' id="docs-mobile-navbar">
+            <header className='lg:hidden sticky top-0 backdrop-blur-lg bg-black text-zinc-200 px-3 flex justify-between items-center z-[10]' id="docs-mobile-navbar">
                 <div className="section-title flex items-center gap-1 py-[1.5vh]">
-                    <HiSquares2X2 />
-                    <span className='docs-main-heading'>Documentation</span>
+                    <HiSquares2X2 className='text-[4.2vw]' />
+                    <span className='docs-main-heading text-[4.2vw]'>Documentation</span>
                 </div>
                 <div onClick={navRevealer} className='header-content flex flex-col justify-center items-center gap-1.5 py-[1.5vh] relative z-[100]' id="mobile-nav-hamburger">
-                    <span className={`h-[0.15vh] w-[9vw] bg-zinc-200 ${reveal ? "rotate-[45deg] translate-y-1" : ""} transition-all duration-700 ease-in-out`}></span>
-                    <span className={`h-[0.15vh] w-[9vw] bg-zinc-200 ${reveal ? "rotate-[-45deg] -translate-y-1" : ""} transition-all duration-700 ease-in-out`}></span>
+                    <span className={`h-[0.15vh] w-[8vw] bg-zinc-200 ${reveal ? "rotate-[45deg] translate-y-1" : ""} transition-all duration-700 ease-in-out`}></span>
+                    <span className={`h-[0.15vh] w-[8vw] bg-zinc-200 ${reveal ? "rotate-[-45deg] -translate-y-1" : ""} transition-all duration-700 ease-in-out`}></span>
                 </div>
-                <div className={`header-content fixed top-0 left-0 h-[100vh] w-[100.2vw] bg-[#000000f8] ${reveal ? "" : "translate-x-[100%]"} transition-all duration-700 ease-in-out`} id="mobile-doc-nav-menu">
+                <div className={`header-content fixed top-0 left-0 h-[100vh] w-[100.2vw] bg-[rgba(0,0,0,0.98)] ${reveal ? "" : "translate-x-[100%]"} transition-all duration-700 ease-in-out`} id="mobile-doc-nav-menu">
                     <nav className="menu-wrapper text-zinc-300 border-r border-[#504e75fb]">
                         <ul className="menu-container pl-10 pt-20">
                             <li className={`menu-item-container flex gap-2 items-center py-1`}>
@@ -135,7 +135,7 @@ const Docs = () => {
                                 <a onClick={navRevealer} href="#privacy" className={`hover:text-[#938bff] mobile-docs-nav-link`}>User Privacy</a>
                             </li>
                             <li className={`menu-item-container flex gap-2 items-center py-1`}>
-                                <a onClick={navRevealer} href="#real-world-usage" className={`hover:text-[#938bff} mobile-docs-nav-link`}>Real World Usecase</a>
+                                <a onClick={navRevealer} href="#real-world-usage" className={`hover:text-[#938bff] mobile-docs-nav-link`}>Real World Usecase</a>
                             </li>
                             <li className={`menu-item-container flex gap-2 items-center py-1`}>
                                 <a onClick={navRevealer} href="#challenges" className={`hover:text-[#938bff] mobile-docs-nav-link`}>Challenges</a>
@@ -173,7 +173,7 @@ const Docs = () => {
                     </p>
                 </div>
 
-                <div className='scroll-m-24 mb-20' id="using">
+                <div className='scroll-mt-24 mb-20' id="using">
                     <h2 className='docs-heading'>How to use Stegx?</h2>
                     <p className='docs-subheading'>A quick guide to hide and retrieve your messages.</p>
                     <p className="paragraph mt-8 pb-8 mb-8 border-b border-[#504e75fb]">
@@ -225,7 +225,7 @@ const Docs = () => {
                             <span className='font-semibold'>• Do Not Lose Your Data</span> : If either the processed image or the unique key is lost or altered, your message will be permanently unrecoverable.
                         </p>
                         <p className='paragraph pl-3 mt-3 mb-3'>
-                            <span className='font-semibold'>• Avoid Image Compression</span> : <span className="highlight">Sending</span> the processed image through platforms like <span className="highlight">WhatsApp, Facebook, or Instagram</span> often compresses te image, which will <span className="highlight">destroy</span> the hidden <span className="highlight">message</span>.
+                            <span className='font-semibold'>• Avoid Image Compression</span> : <span className="highlight">Sending</span> the processed image through platforms like <span className="highlight">WhatsApp, Facebook, or Instagram</span> often compresses the image, which will <span className="highlight">destroy</span> the hidden <span className="highlight">message</span>.
                         </p>
                         <p className='paragraph pl-3'>
                             <span className='font-semibold'>• Recommended Sharing Methods</span> : <span className="highlight">To safely share</span> the image, send it as a <span className="highlight">document file</span> on platforms like WhatsApp or <span className="highlight">upload it</span> to a cloud service like <span className="highlight">Google Drive</span> and share the link.
@@ -303,7 +303,7 @@ const Docs = () => {
                     <div className='mt-8 pl-5'>
                         <h3 className='mini-heading font-semibold'>🧠 Intelligent Key Generation</h3>
                         <p className="paragraph mt-3">
-                            Each operation in Stegx produces a unique decryption key that encodes essential details required to reverse the process without revealing anything meaningful on its own. The key structure is intentionally obfuscated, making reverse-engineering impractical. The interesting part is - using the <span className="highlight">same image</span> and <span className="highlight">same message</span> multiple times can generate <span className="highlight">different keys</span>, and that makes it even more secure and powerfull.
+                            Each operation in Stegx produces a unique decryption key that encodes essential details required to reverse the process without revealing anything meaningful on its own. The key structure is intentionally obfuscated, making reverse-engineering impractical. The interesting part is - using the <span className="highlight">same image</span> and <span className="highlight">same message</span> multiple times can generate <span className="highlight">different keys</span>, and that makes it even more secure and powerful.
                         </p>
                     </div>
                     <div className='mt-8 pl-5'>
@@ -315,13 +315,13 @@ const Docs = () => {
                     <div className='mt-8 pl-5'>
                         <h3 className='mini-heading font-semibold'>🚫 Difficult to Brute-Force</h3>
                         <p className="paragraph mt-3">
-                            With a breaking <span className="highlight">complexity</span> greater than 429,49,67,29,83,66 <span className="highlight">(4.2 bilion)</span>, Stegx is not vulnerable to common brute-force or dictionary attacks. Without the exact encryption parameters and key, decryption is computationally infeasible—even for attackers who suspect something is hidden.
+                            With a breaking <span className="highlight">complexity</span> greater than 429,49,67,29,83,66 <span className="highlight">(4.2 billion)</span>, Stegx is not vulnerable to common brute-force or dictionary attacks. Without the exact encryption parameters and key, decryption is computationally infeasible—even for attackers who suspect something is hidden.
                         </p>
                     </div>
                     <div className='mt-8 pl-5'>
                         <h3 className='mini-heading font-semibold'>🌐 100% Web-Based, No Installation</h3>
                         <p className="paragraph mt-3">
-                            Stegx runs entirely in the browser. No software installation, <span className="highlight">no data stored</span> on databse, everything happens in server which deletes the image data after sending back to the user, giving users complete control and privacy.
+                            Stegx runs entirely in the browser. No software installation, <span className="highlight">no data stored</span> on database, everything happens in server which deletes the image data after sending back to the user, giving users complete control and privacy.
                         </p>
                     </div>
 
@@ -420,7 +420,7 @@ const Docs = () => {
                         </li>
                         <li className='paragraph mb-4'>
                             <h4 className='mb-1'>High Brute-Force Complexity :</h4>
-                            <p>With a <span className="highlight">breaking complexity</span> exceeding 429,49,67,29,83,66 <span className="highlight">(4.2 bilion)</span>, the system is resistant to <span className="highlight">brute force attacks</span>. The key space is large and randomized, making exhaustive search methods computationally infeasible.</p>
+                            <p>With a <span className="highlight">breaking complexity</span> exceeding 429,49,67,29,83,66 <span className="highlight">(4.2 billion)</span>, the system is resistant to <span className="highlight">brute force attacks</span>. The key space is large and randomized, making exhaustive search methods computationally infeasible.</p>
                         </li>
                         <li className='paragraph mb-4'>
                             <h4 className='mb-1'>Stealth by Design :</h4>
