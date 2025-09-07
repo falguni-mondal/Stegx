@@ -33,7 +33,7 @@ const Docs = () => {
     }
 
     return (
-        <section className='w-full h-[100dvh] font-helv tracking-wide flex flex-col lg:flex-row overflow-x-hidden overflow-y-scroll' id='docs-section'>
+        <section className='w-full h-[100dvh] font-helv tracking-wide flex flex-col lg:flex-row bg-[#00000091] overflow-x-hidden overflow-y-scroll' id='docs-section'>
             <header className='w-[20%] min-h-[100vh] hidden lg:block sticky top-0' id="docs-navbar">
                 <div className="section-intro p-10 text-zinc-200 flex gap-1 items-center">
                     <HiSquares2X2 />
