@@ -189,7 +189,7 @@ const Docs = () => {
                         <ul className='mt-10'>
                             <li>
                                 <p className='paragraph mb-2'>
-                                    <span className='font-semibold '>1. Select an Image :</span> Click on the image icon to choose a <span className="highlight">PNG file</span> from your system. The icon will change to display your selected image.
+                                    <span className='font-semibold '>1. Select an Image :</span> Click on the Test Image button to choose a test image, or click on the image icon to choose a <span className="highlight">PNG file</span> from your system. The icon will change to display your selected image.
                                 </p>
                                 <img src={step1} alt="" />
                             </li>
