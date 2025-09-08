@@ -32,26 +32,32 @@ const Home = () => {
 
 
   return (
-    <section className='homepage relative w-full pb-20 lg:pb-0 pt-10 lg:pt-24 px-3 lg:px-10 grid grid-cols-1 grid-rows-3 lg:grid-cols-6 lg:grid-rows-1 gap-16'>
-      <div className={`loader fixed z-50 inset-0 flex flex-col items-center justify-center pb-28 lg:pb-10 bg-[#0000008a] text-white ${load ? "" : "hidden"}`}>
-        <img className='w-[80px] h-[80px]' src={loading} alt="" />
-        <p className='bg-[#0000001a] font-medium'>Wait for a moment 😊</p>
-      </div>
-      {/* LEFT SECTION */}
-      <HomeHeading />
+    <>
+      <section className='homepage relative w-full pt-10 lg:pt-24 px-3 lg:px-10 grid grid-cols-1 grid-rows-3 lg:grid-cols-6 lg:grid-rows-1 gap-16'>
+        <div className={`loader fixed z-50 inset-0 flex flex-col items-center justify-center pb-28 lg:pb-10 bg-[#0000008a] text-white ${load ? "" : "hidden"}`}>
+          <img className='w-[80px] h-[80px]' src={loading} alt="" />
+          <p className='bg-[#0000001a] font-medium'>Wait for a moment 😊</p>
+        </div>
+        {/* LEFT SECTION */}
+        <HomeHeading />
 
-      {/* MIDDLE SECTION */}
-      <Steg setLoad={setLoad} />
+        {/* MIDDLE SECTION */}
+        <Steg setLoad={setLoad} />
 
-      {/* RIGHT SECTION */}
-      <div className="overview-container lg:col-span-2 flex flex-col gap-10 mt-10 lg:mt-[7vmin]">
-        {
-          process.map(({ heading, desc, img }) => (
-            <Process key={heading} heading={heading} desc={desc} img={img} />
-          ))
-        }
-      </div>
-    </section>
+        {/* RIGHT SECTION */}
+        <div className="overview-container lg:col-span-2 flex flex-col gap-10 mt-10 lg:mt-[7vmin]">
+          {
+            process.map(({ heading, desc, img }) => (
+              <Process key={heading} heading={heading} desc={desc} img={img} />
+            ))
+          }
+        </div>
+      </section>
+
+      <footer className='px-3 lg:px-10 pb-24 lg:pb-0'>
+        <span className='paragraph text-zinc-200'>©2025 StegX Image Steganography</span>
+      </footer>
+    </>
   )
 }
 

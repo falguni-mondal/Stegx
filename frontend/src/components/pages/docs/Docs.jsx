@@ -547,36 +547,36 @@ const Docs = () => {
                     <h3 className='mini-heading mb-2 mt-8 pl-5 font-semibold'>Frontend</h3>
                     <ul className='pl-5'>
                         <li className='paragraph mb-2 mt-4 flex items-center gap-1'>
-                            <FaReact className='text-[#63b9ff]'/>React.js – Used to build a dynamic and responsive user interface with a component-based architecture.
+                            <FaReact className='text-[#63b9ff]' />React.js – Used to build a dynamic and responsive user interface with a component-based architecture.
                         </li>
                         <li className='paragraph mb-2 flex items-center gap-1'>
-                            <TbBrandVite className='text-amber-400'/>Vite – Provided a lightning-fast development environment and optimized build system for React.
+                            <TbBrandVite className='text-amber-400' />Vite – Provided a lightning-fast development environment and optimized build system for React.
                         </li>
                         <li className='paragraph mb-2 flex items-center gap-1'>
-                            <RiTailwindCssFill className='text-[#63b9ff]'/>Tailwind CSS – Enabled rapid UI styling with a utility-first approach, ensuring a clean and responsive design across devices.
+                            <RiTailwindCssFill className='text-[#63b9ff]' />Tailwind CSS – Enabled rapid UI styling with a utility-first approach, ensuring a clean and responsive design across devices.
                         </li>
                         <li className='paragraph flex items-center gap-1'>
-                            <MdAltRoute className='text-red-400'/>React-router-dom - To handle client-side routing in React applications, allowing for the creation of Single Page Applications (SPAs)
+                            <MdAltRoute className='text-red-400' />React-router-dom - To handle client-side routing in React applications, allowing for the creation of Single Page Applications (SPAs)
                         </li>
                     </ul>
 
                     <h3 className='mini-heading mb-2 mt-8 pl-5 font-semibold'>Backend</h3>
                     <ul className='pl-5'>
                         <li className='paragraph mb-2 mt-4 flex items-center gap-1'>
-                            <FaNodeJs className='text-lime-300'/>Node.js – Served as the runtime environment for handling server-side logic and asynchronous operations.
+                            <FaNodeJs className='text-lime-300' />Node.js – Served as the runtime environment for handling server-side logic and asynchronous operations.
                         </li>
                         <li className='paragraph flex items-center gap-1'>
-                            <SiExpress className='text-teal-400'/>Express.js – A minimalist web framework used to create the backend API endpoints for encryption and image handling.
+                            <SiExpress className='text-teal-400' />Express.js – A minimalist web framework used to create the backend API endpoints for encryption and image handling.
                         </li>
                     </ul>
 
                     <h3 className='mini-heading mb-2 mt-8 pl-5 font-semibold'>Image Processing & File Handling (Backend)</h3>
                     <ul className='pl-5'>
                         <li className='paragraph mb-2 mt-4 flex items-center gap-1'>
-                            <RiImageCircleAiFill className='text-blue-400'/>Sharp – A fast library, used for manipulating images at the pixel level, allowing the embedding and extraction of hidden messages.
+                            <RiImageCircleAiFill className='text-blue-400' />Sharp – A fast library, used for manipulating images at the pixel level, allowing the embedding and extraction of hidden messages.
                         </li>
                         <li className='paragraph flex items-center gap-1'>
-                            <FaFileImage className='text-indigo-500'/>Multer – Middleware used for handling image file uploads from the client side to the server securely and efficiently.
+                            <FaFileImage className='text-indigo-500' />Multer – Middleware used for handling image file uploads from the client side to the server securely and efficiently.
                         </li>
                     </ul>
                 </div>
@@ -705,7 +705,11 @@ const Docs = () => {
                     </div>
                     <p className='paragraph'>Feel free to explore, test, and contribute responsibly!</p>
                 </div>
-                <div className="h-10"></div>
+                <div className="border-t-[1px] border-[#504e6b] pt-[3vmax] pb-[10vh] lg:pb-[3vmax]">
+                    <footer>
+                        <span className='paragraph'>© 2025 StegX Image Steganography</span>
+                    </footer>
+                </div>
             </section>
         </section >
     )
