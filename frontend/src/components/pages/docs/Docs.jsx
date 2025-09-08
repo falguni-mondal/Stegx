@@ -315,7 +315,7 @@ const Docs = () => {
                     <div className='mt-8 pl-5'>
                         <h3 className='mini-heading font-semibold'>🚫 Difficult to Brute-Force</h3>
                         <p className="paragraph mt-3">
-                            With a breaking <span className="highlight">complexity</span> greater than 429,49,67,29,83,66 <span className="highlight">(4.2 billion)</span>, Stegx is not vulnerable to common brute-force or dictionary attacks. Without the exact encryption parameters and key, decryption is computationally infeasible—even for attackers who suspect something is hidden.
+                            With a breaking <span className="highlight">complexity</span> greater than 429,49,67,29,83,66 <span className="highlight">(42.9 billion)</span>, Stegx is not vulnerable to common brute-force or dictionary attacks. Without the exact encryption parameters and key, decryption is computationally infeasible—even for attackers who suspect something is hidden.
                         </p>
                     </div>
                     <div className='mt-8 pl-5'>
@@ -420,7 +420,7 @@ const Docs = () => {
                         </li>
                         <li className='paragraph mb-4'>
                             <h4 className='mb-1'>High Brute-Force Complexity :</h4>
-                            <p>With a <span className="highlight">breaking complexity</span> exceeding 429,49,67,29,83,66 <span className="highlight">(4.2 billion)</span>, the system is resistant to <span className="highlight">brute force attacks</span>. The key space is large and randomized, making exhaustive search methods computationally infeasible.</p>
+                            <p>With a <span className="highlight">breaking complexity</span> exceeding 429,49,67,29,83,66 <span className="highlight">(42.9 billion)</span>, the system is resistant to <span className="highlight">brute force attacks</span>. The key space is large and randomized, making exhaustive search methods computationally infeasible.</p>
                         </li>
                         <li className='paragraph mb-4'>
                             <h4 className='mb-1'>Stealth by Design :</h4>
