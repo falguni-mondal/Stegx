@@ -91,6 +91,7 @@ header {
   color: #9088ff;
 }
 
+
 @media (max-width: 1023px) {
   .heading-txt {
     font-size: 21vw;
