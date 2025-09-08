@@ -110,7 +110,7 @@ const Docs = () => {
                     <span className={`h-[0.15vh] w-[8vw] bg-zinc-200 ${reveal ? "rotate-[45deg] translate-y-1" : ""} transition-all duration-700 ease-in-out`}></span>
                     <span className={`h-[0.15vh] w-[8vw] bg-zinc-200 ${reveal ? "rotate-[-45deg] -translate-y-1" : ""} transition-all duration-700 ease-in-out`}></span>
                 </div>
-                <div className={`header-content fixed top-0 h-[100vh] w-[100.2vw] bg-[rgba(0,0,0,0.98)] ${reveal ? "left-0" : "left-[100%]"} transition-all duration-700 ease-in-out`} id="mobile-doc-nav-menu">
+                <div className={`header-content fixed top-0 h-[100dvh] w-[100.2vw] bg-[rgba(0,0,0,0.98)] ${reveal ? "left-0" : "left-[100%]"} transition-all duration-700 ease-in-out`} id="mobile-doc-nav-menu">
                     <nav className="menu-wrapper text-zinc-300 border-r border-[#504e75fb]">
                         <ul className="menu-container pl-10 pt-20">
                             <li className={`menu-item-container flex gap-2 items-center py-1`}>
@@ -189,7 +189,7 @@ const Docs = () => {
                         <ul className='mt-10'>
                             <li>
                                 <p className='paragraph mb-2'>
-                                    <span className='font-semibold '>1. Select an Image :</span> Click on the Test Image button to choose a test image, or click on the image icon to choose a <span className="highlight">PNG file</span> from your system. In both the cases the image icon will change to a another icon signing that your image is selected.
+                                    <span className='font-semibold '>1. Select an Image :</span> You can either choose a <span className="highlight">test image</span> by clicking on the Test Image button, or you can choose a <span className="highlight">PNG file</span> from your system by clicking on the Image Icon. In both the cases the image icon will change to another icon signing that the image is selected.
                                 </p>
                                 <img src={step1} alt="" />
                             </li>
